@@ -18,3 +18,6 @@ Under the UNDP programme called Climate Information for Resilient Development in
 The developers formed teams to create prototype mobile and information-system-based applications and technological solutions to share actionable weather and climate information with a variety of stakeholders, sectors and end-users.
 
 As a result different applications and platforms were prototyped [here](https://climateaction.io/) is the list.
+
+I had a chance to go this hackathon, it was wonderful to meet people who have been working on useful information on climate. It was so amazing when we got to realize how much some of the companies have worked on providing useful tools around gathered climate data.
+
