@@ -2,6 +2,7 @@
 published: false
 ---
 
+
 ![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/undp-hackathon.jpeg)
 
 ## The Last Mile
@@ -14,4 +15,3 @@ Under the UNDP programme called Climate Information for Resilient Development in
 The developers formed teams to create prototype mobile and information-system-based applications and technological solutions to share actionable weather and climate information with a variety of stakeholders, sectors and end-users.
 
 As a result different applications and platforms were prototyped [here](https://climateaction.io/) is the list.
-
