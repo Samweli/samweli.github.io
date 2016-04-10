@@ -1,4 +1,6 @@
 ---
+layout: post
+title: Climate Action Hackathon
 published: true
 ---
 
