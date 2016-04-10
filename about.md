@@ -6,7 +6,7 @@ published: true
 ---
 
 
-Constantly looking for opportunities to positively change the world and at the same time having fun with the technologies. Yes this what i am :).
+Constantly looking for opportunities to positively change the world and at the same time having fun with the technologies. Yes this is what i am :).
 
 ### More Information
 Lives in Dar es salaam, Tanzania. 
