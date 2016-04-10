@@ -21,5 +21,5 @@ As a result different applications and platforms were prototyped [here](https://
 
 I had a chance to go this hackathon, it was wonderful to meet people who have been working on useful information on climate. It was so amazing when we got to realize how much some of the companies have worked on providing useful tools around gathered climate data.
 
-![ClimateFrame group working on the prototype](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/undp-hackathon.jpeg)
+![ClimateFrame group working on the prototype](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/climate-frame-undp.jpg)
 
