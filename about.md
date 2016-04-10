@@ -2,14 +2,16 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+
+Constantly looking for opportunities to positively change the world and at the same time having fun with the technologies. Yes this what i am :).
 
 ### More Information
+Lives in Dar es salaam, Tanzania. 
 
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[smwltwesa6@gmail.com](mailto:smwltwesa6@gmail.com)
