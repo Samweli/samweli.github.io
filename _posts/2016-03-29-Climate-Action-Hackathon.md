@@ -27,7 +27,7 @@ Me and three other developers worked on developing a framework that we aimed to 
 ![ClimateFrame group working on the prototype](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/climate-frame-undp.jpg)
 _ClimateFrame group on action_
 
-Other Groups on Action
+#### Other Groups on Action
 ![cah_image](https://c3.staticflickr.com/2/1540/25222387034_ce974f0299_z.jpg)
 ![cah_image2](https://c7.staticflickr.com/2/1506/25552275070_77cef53b62_c.jpg)
 ![cah_image3](https://c1.staticflickr.com/2/1466/25552301320_4f17a8f354.jpg)
