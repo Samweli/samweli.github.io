@@ -12,6 +12,6 @@ published: true
 ## Floods in Dar es salaam
 
 
-## Floods Map Tool
+### Floods Map Tool
 
-![Link](http://samweli.github.io/flood-map/)
+[link](http://samweli.github.io/flood-map/)
