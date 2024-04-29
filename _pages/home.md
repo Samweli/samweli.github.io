@@ -41,7 +41,7 @@ feature_row2:
     btn_class: "btn--primary"
     btn_label: "More about the city"
 feature_row3:
-  - image_path: /assets/images/checkers.png
+  - image_path: /assets/images/checkers_latest.png
     alt: "customizable"
     title: "Checkers"
     excerpt: "Fan and a regular player of checkers(Tanzania version) enjoying the game of moving pieces on the board. It's fun because you have to think and plan your moves carefully, trying to predict what your opponent will do next. It's like a puzzle that you solve with logic and strategy. Checkers keeps you entertained because it's easy to learn but challenging to master, making it a classic game that never gets old."
