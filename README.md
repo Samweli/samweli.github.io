@@ -38,6 +38,19 @@ Create docker image with all the ruby and gems tools installed.
   docker build -t blog .
 ```
 
+Build the site static files
+
+```yaml
+  docker run --volume="$PWD:/srv/jekyll" -it blog bundle exec jekyll build --baseurl ./_site
+```
+
+If the gems are not yet install then run the following command
+
+```yaml
+  docker run --volume="$PWD:/srv/jekyll" -it blog2 bundle install
+
+```
+
 Spin up docker container with the hosted sites.
 
 ```yaml

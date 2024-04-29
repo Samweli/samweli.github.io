@@ -2,7 +2,7 @@ version: "3.0"
 
 services:
   dev:
-    image: blog2
+    image: blog
     command: ["bundle", "exec", "jekyll", "serve", "--incremental", "--livereload"]
     ports:
       - "4000:4000"
