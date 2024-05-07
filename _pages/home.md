@@ -53,6 +53,11 @@ feature_row4:
     alt: "customizable"
     title: "Staying fit"
     excerpt: "When not coding and not busy with screens, I put on my running shoes and hit the road. It feels great to run, clear my head, and feel alive. Sometimes, I play football with friends for more fun and exercise. These activities aren't just about staying healthy; they help me remember there's more to life than just computers and code."
+feature_row5:
+  - image_path: /assets/images/music_notes.png
+    alt: "customizable"
+    title: "Love for music"
+    excerpt: "Living for all the good global beats and instrumentals; from afrobeats, symphony orchestra and live performances. Without forgetting movies scores listening and following the art of storytelling with music while evoking emotions is the way I find true life harmony. You can find some of the playlists that I listen to whenever I want to feel alive here <a href='https://soundcloud.com/samtwesa'> https://soundcloud.com/samtwesa</a>."
 ---
 
 {% include feature_row %}
@@ -60,3 +65,4 @@ feature_row4:
 {% include feature_row id="feature_row2" type="full" %}
 {% include feature_row id="feature_row3" type="left" %}
 {% include feature_row id="feature_row4" type="right" %}
+{% include feature_row id="feature_row5" type="left" %}
