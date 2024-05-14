@@ -18,8 +18,13 @@ $sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
+$custom-font: Lato,Helvetica Neue,Helvetica,sans-serif;
+
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
+
+$custom-font-narrow: $custom-font !default;
+
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* serif typefaces */
@@ -29,9 +34,9 @@ $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: $sans-serif !default;
-$header-font-family: $sans-serif !default;
-$caption-font-family: $serif !default;
+$global-font-family: $custom-font !default;
+$header-font-family: $custom-font !default;
+$caption-font-family: $custom-font !default;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px
