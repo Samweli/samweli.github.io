@@ -11,21 +11,21 @@ header:
       url: "http://github.com/Samweli"
 excerpt: <b><br />
 feature_row:
-  - image_path: /assets/images/projects.jpg
+  - image_path: /assets/images/projects_pro_3.jpeg
     alt: "customizable"
     title: "Projects"
     excerpt: "From open source projects, consultancy in open data and technologies and everything that covers and provide insights for developers, businesses and enthusiasts."
     url: "/docs/configuration/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
-  - image_path: /assets/images/coding.jpg
+  - image_path: /assets/images/coding_pro_3.jpeg
     alt: "fully responsive"
     title: "Code"
     excerpt: "Solutions to daily challenging and complex problems. Techniques used by developers in programming, including geospatial hacking."
     url: "/docs/layouts/"
     btn_class: "btn--primary"
     btn_label: "Learn more"
-  - image_path: /assets/images/blogs.jpg
+  - image_path: /assets/images/posts_pro_3.jpeg
     alt: "100% free"
     title: "Posts"
     excerpt: "Checkout interesting blog posts that cover a wide range of topics from Samweli's experience in writing softwares."
