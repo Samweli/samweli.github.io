@@ -28,15 +28,15 @@ feature_row:
   - image_path: /assets/images/posts_pro_3.jpeg
     alt: "100% free"
     title: "Posts"
-    excerpt: "Checkout interesting blog posts that cover a wide range of topics from Samweli's experience in writing softwares."
+    excerpt: "Checkout interesting blog posts that cover a wide range of topics from software development to life experiences.."
     url: "/year-archive/"
     btn_class: "btn--primary"
     btn_label: "Learn more"     
 feature_row2:
   - image_path: /assets/images/dar_es_salaam.jpg
     alt: "customizable"
-    title: "Dar es salaam, Tanzania"
-    excerpt: "Samweli is from Dar es salaam, Tanzania, a city located on Tanzania's eastern coast, this busy city is the country's biggest, with over five million people. It's also the fifth most populous in Africa and a hotspot for technology and innovation, growing faster than almost any other city in the world."
+    title: "Location"
+    excerpt: "Based in Dar es salaam, Tanzania, a city located on Tanzania's eastern coast, this busy city is the country's biggest, with over five million people. It's also the fifth most populous in Africa and a hotspot for technology and innovation, growing faster than almost any other city in the world."
     url: "https://en.wikipedia.org/wiki/Dar_es_Salaam_Region/"
     btn_class: "btn--primary"
     btn_label: "More about the city"
