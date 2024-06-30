@@ -28,7 +28,7 @@ feature_row:
   - image_path: /assets/images/posts_pro_3.jpeg
     alt: "100% free"
     title: "Posts"
-    excerpt: "Checkout interesting blog posts that cover a wide range of topics from software development to life experiences.."
+    excerpt: "Checkout interesting blog posts that cover a wide range of topics from software development to life experiences."
     url: "/year-archive/"
     btn_class: "btn--primary"
     btn_label: "Learn more"     
