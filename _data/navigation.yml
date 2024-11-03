@@ -3,7 +3,7 @@ main:
   - title: "Home"
     url: /
   - title: "Software"
-    url: /softwares/
+    url: /software/
   - title: "Maps"
     url: /maps/
   - title: "Posts"
