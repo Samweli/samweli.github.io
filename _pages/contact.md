@@ -21,7 +21,7 @@ I'm always interested in discussing new projects, opportunities for collaboratio
 ### Collaboration
 I'm interested in projects involving:
 - Software development
-- Geospatial data visualization
+- Geospatial data
 - Django/Python development
 - Open source GIS
 - QGIS core and plugin development
