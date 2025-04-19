@@ -10,21 +10,34 @@ published: true
 
 _Drone Imagery Map_
 
-## Visualizing Dar es salaam drone imagery 2
-At the end of 2017 The World Bank Tanzania helped in collecting drone imagery in Dar es salaam as per request of 
-[DART](https://www.dart.go.tz/) (Dar Rapid Transit).
+## Visualizing Dar es salaam drone imagery
 
-The activity covered all areas that are nearby all the planned BRT (Bus Rapid Transit) routes.
+At the end of 2017, The World Bank Tanzania, in collaboration with the Dar Rapid Transit ([DART](https://www.dart.go.tz/)) Agency, 
+supported the collection of high-resolution drone imagery across Dar es Salaam. This initiative was part of a broader effort to 
+support urban planning and development along the proposed Bus Rapid Transit (BRT) routes throughout the city.
 
-After successful imagery data collection, next it was required to visualize the collected data, 
-one of the challenges in this was the raw data was too large to load in a normal computer, it took long time to view it,
- also the data format (geotiff) requires special GIS applications (most are desktop based) to access and view,
- this constrained users to first install those applications in order to view the data. 
+The drone mapping activity successfully captured detailed imagery of all areas surrounding the planned BRT corridors. 
+This rich dataset was expected to serve as a critical resource for planning and decision-making throughout
+the BRT development process.
 
-These challenges raised a need to develop other tool (web based) in order to simplify data access and use.
+However, once the data was collected, the next challenge emerged—visualizing and accessing it effectively. 
+The raw drone imagery, provided in GeoTIFF format, was extremely large in size. This made it difficult to load 
+and interact with the data on a regular computer. Standard desktop machines often struggled to open the files, 
+and even when they did, rendering the imagery was slow.
 
-As part of the World Bank Tanzania team which supported DART to collect the data I was tasked to create visualization for the drone imagery.
+To make things more complicated, viewing GeoTIFFs typically requires specialized Geographic Information System (GIS) software,
+which is often desktop-based and not very user-friendly for non-technical users. This meant that anyone wanting to interact 
+with the data had to first install special GIS tools, creating a barrier for planners and the public alike.
 
-I decided to use [Mapbox GL](https://docs.mapbox.com/mapbox-gl-js/overview/) to build the web map which shows the imagery.
+These limitations highlighted the need for a more accessible, web-based solution—something that didn’t require 
+powerful hardware or dedicated software installation, and could be used directly from a browser.
 
-The result was a high perfomance and easily accessible web map. You can view it [here](http://brt-viz.herokuapp.com/)
+As a member of The World Bank Tanzania team supporting the DART project, 
+I was tasked with developing a visualization tool for this imagery dataset. 
+My goal was to make the drone imagery easily accessible to a wide range of users, 
+from urban planners to city officials and community members.
+
+Using [Mapbox GL](https://docs.mapbox.com/mapbox-gl-js/overview/) I built a lightweight, high-performance web application that could display the
+large drone imagery efficiently, directly within a browser window.
+
+The result was a high perfomance and easily accessible web map, it can be viewed [here](http://brt-viz.herokuapp.com/)
