@@ -19,7 +19,7 @@ I'm always interested in discussing new projects, opportunities for collaboratio
 
 
 ### Collaboration
-I'm interested in projects involving:
+I actively seek out projects involving:
 - Software development
 - Geospatial data
 - Django/Python development
