@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-04-22T12:42:01+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Embracing and exploring tech world</title><subtitle>Observing life from a software perspective.</subtitle><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><entry><title type="html">Streamlining QGIS Development using Docker</title><link href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/" rel="alternate" type="text/html" title="Streamlining QGIS Development using Docker" /><published>2024-12-01T00:00:00+00:00</published><updated>2024-12-01T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-QGIS-Development-Using-Docker</id><content type="html" xml:base="http://0.0.0.0:4000/QGIS-Development-Using-Docker/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/qgis_dev_splash.png)
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-04-22T13:23:03+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Embracing and exploring tech world</title><subtitle>Observing life from a software perspective.</subtitle><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><entry><title type="html">Streamlining QGIS Development using Docker</title><link href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/" rel="alternate" type="text/html" title="Streamlining QGIS Development using Docker" /><published>2024-12-01T00:00:00+00:00</published><updated>2024-12-01T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-QGIS-Development-Using-Docker</id><content type="html" xml:base="http://0.0.0.0:4000/QGIS-Development-Using-Docker/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/qgis_dev_splash.png)
 
 _QGIS Dev Splash_
 
@@ -220,37 +220,38 @@ The activity resulted into collection of more than 10,000 waste piles. After the
 
 As part of TURP team, we analyzed the data and built a web map that visualized and provide important insights for the nearly 10,000 points. We used [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/) together with a [React](https://reactjs.org/) framework, these enabled creating a vector based web map that has high rendering performance and a smooth user interaction.
 
-The trash web map can be accessed [here](http://dar-trash-viz.netlify.app) and source code for the map [here](https://github.com/ResilientDar/dar-trash-viz/).]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Developing Twaamtaro (Adopt a Drain)</title><link href="http://0.0.0.0:4000/Twaamtaro/" rel="alternate" type="text/html" title="Developing Twaamtaro (Adopt a Drain)" /><published>2017-01-30T00:00:00+00:00</published><updated>2017-01-30T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Twaamtaro</id><content type="html" xml:base="http://0.0.0.0:4000/Twaamtaro/"><![CDATA[<p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_logo.png" alt="" /></p>
+The trash web map can be accessed [here](http://dar-trash-viz.netlify.app) and source code for the map [here](https://github.com/ResilientDar/dar-trash-viz/).]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Developing Twaamtaro (Adopt a Drain)</title><link href="http://0.0.0.0:4000/Twaamtaro/" rel="alternate" type="text/html" title="Developing Twaamtaro (Adopt a Drain)" /><published>2017-01-30T00:00:00+00:00</published><updated>2017-01-30T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Twaamtaro</id><content type="html" xml:base="http://0.0.0.0:4000/Twaamtaro/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_logo.png)
 
-<h2 id="twaamtaro-tanzania">Twaamtaro Tanzania</h2>
+## Twaamtaro Tanzania
 
-<p>Online platform that tracks local drain cleanliness &amp; information on solid waste deposits.
-Inspired by Adopt a Drain from Code for America!.</p>
+Online platform that tracks local drain cleanliness & information on solid waste deposits.
+Inspired by Adopt a Drain from Code for America!.
 
-<h3 id="background">Background</h3>
-<p>Waste cleanness in Dar es salaam drains is rarely done, and when it is done, there is lack of dissemination of the work and drains status to respective leaders and stakeholders. There is always a need to raise community engagement in drains cleaning and to find innovative ways that can enable provision of reports on drains cleaness to the community.</p>
+### Background
+Waste cleanness in Dar es salaam drains is rarely done, and when it is done, there is lack of dissemination of the work and drains status to respective leaders and stakeholders. There is always a need to raise community engagement in drains cleaning and to find innovative ways that can enable provision of reports on drains cleaness to the community.
 
-<h3 id="leverage">Leverage</h3>
+### Leverage
 
-<p>Community mapping project ‘ramani huria’ has collected the available data on the drainage network. These are available and  can be  found on openstreetmap, these data shows that the network has not covered the large part of the city and from different reports it is not frequently maintained in the areas it has covered. More details can be found <a href="http://ramanihuria.org/mapping-drainage-in-dar-es-salaam/">here</a></p>
+Community mapping project ‘ramani huria’ has collected the available data on the drainage network. These are available and  can be  found on openstreetmap, these data shows that the network has not covered the large part of the city and from different reports it is not frequently maintained in the areas it has covered. More details can be found [here](http://ramanihuria.org/mapping-drainage-in-dar-es-salaam/)
 
-<p>Building on this work, arrangements were made to organize the community to frequently clean these drains so as to help water flow especially on flood prone areas, this went in parallel with development of application to monitor, store and show drains information called Twaa mtaro (Adopt a drain).</p>
+Building on this work, arrangements were made to organize the community to frequently clean these drains so as to help water flow especially on flood prone areas, this went in parallel with development of application to monitor, store and show drains information called Twaa mtaro (Adopt a drain).
 
-<p>Twaamtaro as a platform enables the community to report about cleaness activities that are done on drains, it does this by letting users send drains information through SMS, USSD and WEB, this enables even the average citizen who does not have access to the Internet to be able to use the platform.</p>
+Twaamtaro as a platform enables the community to report about cleaness activities that are done on drains, it does this by letting users send drains information through SMS, USSD and WEB, this enables even the average citizen who does not have access to the Internet to be able to use the platform.
 
-<p>The workflow is citizen are assigned drains by the street leaders, they receive SMS notification from the platform, when the finish cleaning they can send SMS or use USSD or login into the online twaamtaro site and update the status of their drains.</p>
+The workflow is citizen are assigned drains by the street leaders, they receive SMS notification from the platform, when the finish cleaning they can send SMS or use USSD or login into the online twaamtaro site and update the status of their drains.
 
-<p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_in_action.png" alt="Twaamtaro in action" /></p>
 
-<p><em>Twaamtaro in action</em></p>
+![Twaamtaro in action](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_in_action.png)
 
-<p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_pres.jpg" alt="Me presenting Twaamtaro to World Bank Tanzania Staffs" /></p>
+_Twaamtaro in action_
 
-<p><em>Samweli (Team lead) presenting Twaamtaro to World Bank Tanzania Staffs</em></p>
+![Me presenting Twaamtaro to World Bank Tanzania Staffs](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_pres.jpg)
 
-<p><a href="https://github.com/Samweli/twaamtaro">Source code</a></p>
+_Samweli (Team lead) presenting Twaamtaro to World Bank Tanzania Staffs_
 
-<p><a href="https://twaamtaro.org">Platform</a></p>]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Isochrone Maps Creation in QGIS</title><link href="http://0.0.0.0:4000/Isochrone-Maps/" rel="alternate" type="text/html" title="Isochrone Maps Creation in QGIS" /><published>2016-09-22T00:00:00+00:00</published><updated>2016-09-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Isochrone-Maps</id><content type="html" xml:base="http://0.0.0.0:4000/Isochrone-Maps/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/isochrone_map.png)
+[Source code](https://github.com/Samweli/twaamtaro)
+
+[Platform](https://twaamtaro.org)]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Isochrone Maps Creation in QGIS</title><link href="http://0.0.0.0:4000/Isochrone-Maps/" rel="alternate" type="text/html" title="Isochrone Maps Creation in QGIS" /><published>2016-09-22T00:00:00+00:00</published><updated>2016-09-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Isochrone-Maps</id><content type="html" xml:base="http://0.0.0.0:4000/Isochrone-Maps/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/isochrone_map.png)
 
 _example isochrone map showing hospitals accessibility times in minutes by car_
 
