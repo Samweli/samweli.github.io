@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-04-22T12:42:01+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Embracing and exploring tech world</title><subtitle>Observing life from a software perspective.</subtitle><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><entry><title type="html">Streamlining QGIS Development using Docker</title><link href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/" rel="alternate" type="text/html" title="Streamlining QGIS Development using Docker" /><published>2024-12-01T00:00:00+00:00</published><updated>2024-12-01T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-QGIS-Development-Using-Docker</id><content type="html" xml:base="http://0.0.0.0:4000/QGIS-Development-Using-Docker/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/qgis_dev_splash.png)
+
+_QGIS Dev Splash_
+
+## QGIS Development with Docker
+
+In recent years, the QGIS Development team has been building and sharing official QGIS Docker images via the QGIS Docker Hub. This initiative helps provide an effective, reusable approach to running and setting up QGIS and its components across a wide variety of use cases. Docker images are especially useful for those looking to run unreleased versions (nightly builds and master branch changes) of QGIS, create robust headless testing environments, and facilitate the setup and compilation of QGIS development environments. 
+
+## QGIS Docker Images in Action: GIS Day Tanzania Hackathon
+
+On GIS Day Tanzania (November 15), a QGIS Hackathon session was hosted, where participants were guided through the QGIS development process, including the setup of a development environment using Docker. It was a great opportunity for newcomers to see how easy it can be to get started with QGIS development and learn about the contribution workflow.
+
+In this post, I’m going to share the benefits of using Docker when setting up QGIS development, and provide a practical guide to becoming a QGIS contributor.
+
+## The Traditional Way of Compiling QGIS Source
+
+The usual approach to compiling QGIS from source involves downloading and installing various dependencies and prerequisites for your operating system. You then need to manually configure the build process to compile QGIS from its source code.
+
+For example, on Ubuntu 22.04, you would need to install a long list of dependencies such as:
+
+- **Build Tools**: `bison`, `build-essential`, `cmake`, `ccache`, `flex`, `git`
+- **Geospatial Libraries**: `libgdal-dev`, `libgeos-dev`, `libproj-dev`, `libpq-dev`
+- **Qt and PyQt5**: `libqt5opengl5-dev`, `libqt5serialport5-dev`, `python3-pyqt5`
+- **Python Dependencies**: `python3-dev`, `python3-gdal`, `python3-lxml`, `python3-psycopg2`
+- **Additional Dependencies**: `doxygen`, `graphviz`, `protobuf-compiler`, `libspatialindex-dev`, `qtbase5-dev`
+
+This process involves not only installing the correct versions of all these packages but also managing potential conflicts between them. Additionally, maintaining these dependencies across different OS versions can be problematic, leading to frequent setup issues and the need for manual troubleshooting.
+
+## Why Use QGIS Docker Images?
+
+There are several compelling reasons to use QGIS Docker images for different tasks:
+
+### 1. Running Unreleased Versions
+Docker images allow you to easily run nightly builds or versions from the master branch of QGIS. This is especially useful for testing new features or bug fixes that have not yet been officially released.
+
+### 2. Headless Testing Environments
+Docker enables the creation of headless environments for automated testing. This is particularly important for continuous integration (CI) pipelines or for running QGIS in a server environment without a GUI.
+
+### 3. Legacy QGIS Versions
+If you need to support older versions of QGIS in an operating system that only allows the latest versions, Docker can help by creating isolated environments where specific versions of QGIS can run independently of the system’s package manager.
+
+### 4. Simplified Compilation and Development Setup
+The Docker approach makes it easier to set up a QGIS development environment, avoiding the challenges and time-consuming tasks involved with manually installing all the required dependencies and configuring the system.
+
+
+## Benefits
+
+With Docker, the complexity of setting up a QGIS development environment is drastically reduced. Docker containers allow you to package everything needed to run QGIS, including its dependencies, into a single environment. Here are some key benefits of using Docker for QGIS development:
+
+### 1. Easy Setup
+Docker enables a "create once, run anywhere" approach. All the dependencies required to compile QGIS are bundled into the Docker image, making it easy to start working on QGIS development without worrying about compatibility or dependency issues. The only thing you need to run a Docker container is Docker itself, which is available on most platforms.
+
+### 2. Platform Independence
+One of Docker’s greatest advantages is that it abstracts away the underlying operating system. Whether you’re using Linux, macOS, or Windows, Docker ensures that the QGIS development environment will be the same across all platforms. This eliminates the need to configure each OS individually and ensures consistency.
+
+### 3. Reproducibility
+Docker images ensure that you can share your development environment with others, making it easier for collaborators or new contributors to get started. This reproducibility is essential in open-source projects like QGIS, where contributors may come from a variety of environments.
+
+### 4. Headless and Isolated Environment
+Docker allows you to run QGIS in a headless, isolated environment, which is ideal for continuous integration, automated testing, and environments where you don’t need a graphical interface.
+
+### 5. Simplified Compilation
+Instead of manually managing and installing dependencies, the Docker image for QGIS comes pre-configured with everything you need. This allows you to focus on development rather than spending hours troubleshooting setup issues.
+
+## Steps to Use QGIS Docker Images for Development
+
+### Prerequisites
+Ensure that Docker, Docker Compose, Git, and an X11 server are installed and running on your system. These tools are necessary to set up the QGIS development environment using Docker.
+
+### 1. Clone QGIS Repository
+Clone the QGIS repository from GitHub to get the source code for building QGIS. This will provide you with the latest source code to configure and compile the application.
+
+### 2. Create Docker Compose Configuration
+Create a `docker-compose.yml` file that defines the necessary services and environment. The file will include settings for the QGIS build dependencies and X11 forwarding for GUI applications.
+
+### 3. Build the Docker Environment
+Use Docker Compose to build the development environment based on the `docker-compose.yml` configuration. This will download the necessary Docker image and set up the environment for compiling QGIS.
+
+### 4. Start the Development Environment
+Launch the Docker container with an interactive bash shell to begin development. This will provide you with a command-line interface inside the container to manage the build process.
+
+### 5. Configure and Build QGIS
+Run CMake and Ninja commands inside the container to configure and compile QGIS. This will build QGIS from source with specific configuration options like enabling plugins and GRASS integration.
+
+### 6. Run QGIS from the Build
+After building, run the compiled QGIS application from the container to verify the installation. You can use the `qgis` command inside the container to launch the application.
+
+### Notes and Troubleshooting
+Be aware that the build process may take significant time depending on your system's resources. If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.
+
+
+For more info check this notebook [here](https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb)
+
+## Reach out
+
+If you have questions about using Docker for QGIS development or contributing to QGIS, there are several places where you can get help:
+
+- **QGIS Developer Mailing List**: The [QGIS Developer Mailing List](https://lists.osgeo.org/mailman/listinfo/qgis-developer) is a great place to ask questions and discuss development-related topics.
+- **QGIS GitHub Repository**: The [QGIS GitHub](https://github.com/qgis/qgis) is where all the development happens, and you can submit issues, pull requests, and more.
+- **QGIS IRC Channel**: Join the QGIS IRC channel (#qgis) on Freenode for real-time discussions with other developers.
+- **QGIS Community Forum**: Visit the [QGIS Community Forum](https://forum.qgis.org/) to ask questions or participate in discussions with other QGIS users and developers.
+
+## Conclusion
+
+Using Docker to set up a QGIS development environment simplifies the process, especially for newcomers who may struggle with the dependency management required for compiling QGIS from source. With Docker, you can create a consistent, reproducible environment for QGIS development that works across platforms and makes contributing to the QGIS project easier than ever.]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Visualizing Dar es salaam City Drone Imagery</title><link href="http://0.0.0.0:4000/Drone-Imagery-Viz/" rel="alternate" type="text/html" title="Visualizing Dar es salaam City Drone Imagery" /><published>2019-09-03T00:00:00+00:00</published><updated>2019-09-03T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-Drone-Imagery-Viz</id><content type="html" xml:base="http://0.0.0.0:4000/Drone-Imagery-Viz/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/dar-drone-imagery-viz.png)
+
+_Drone Imagery Map_
+
+## Visualizing Dar es salaam drone imagery
+
+At the end of 2017, The World Bank Tanzania, in collaboration with the Dar Rapid Transit ([DART](https://www.dart.go.tz/)) Agency, 
+supported the collection of high-resolution drone imagery across Dar es Salaam. This initiative was part of a broader effort to 
+support urban planning and development along the proposed Bus Rapid Transit (BRT) routes throughout the city.
+
+The drone mapping activity successfully captured detailed imagery of all areas surrounding the planned BRT corridors. 
+This rich dataset was expected to serve as a critical resource for planning and decision-making throughout
+the BRT development process.
+
+However, once the data was collected, the next challenge emerged—visualizing and accessing it effectively. 
+The raw drone imagery, provided in GeoTIFF format, was extremely large in size. This made it difficult to load 
+and interact with the data on a regular computer. Standard desktop machines often struggled to open the files, 
+and even when they did, rendering the imagery was slow.
+
+To make things more complicated, viewing GeoTIFFs typically requires specialized Geographic Information System (GIS) software,
+which is often desktop-based and not very user-friendly for non-technical users. This meant that anyone wanting to interact 
+with the data had to first install special GIS tools, creating a barrier for planners and the public alike.
+
+These limitations highlighted the need for a more accessible, web-based solution—something that didn’t require 
+powerful hardware or dedicated software installation, and could be used directly from a browser.
+
+As a member of The World Bank Tanzania team supporting the DART project, 
+I was tasked with developing a visualization tool for this imagery dataset. 
+My goal was to make the drone imagery easily accessible to a wide range of users, 
+from urban planners to city officials and community members.
+
+Using [Mapbox GL](https://docs.mapbox.com/mapbox-gl-js/overview/) I built a lightweight, high-performance web application that could display the
+large drone imagery efficiently, directly within a browser window.
+
+The result was a high perfomance and easily accessible web map, it can be viewed [here](http://brt-viz.herokuapp.com/)]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Converting ODK location data to WKT in QGIS</title><link href="http://0.0.0.0:4000/ODKTrace2WKT/" rel="alternate" type="text/html" title="Converting ODK location data to WKT in QGIS" /><published>2019-09-01T00:00:00+00:00</published><updated>2019-09-01T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-ODKTrace2WKT</id><content type="html" xml:base="http://0.0.0.0:4000/ODKTrace2WKT/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/odktrace2wkt.png)
+
+_Plugin interface_
+
+## Loading ODK location data in QGIS
+
+[Open Data Kit(ODK)](https://getodk.org/) is now widely used in collecting location data. One notable use case is the project 
+called [Ramani Huria](https://ramanihuria.org/) (Open Map) which used ODK to map Dar es salaam city drains. 
+One of the challenges in using ODK to collect linestring data is the format that it 
+save the data into (geotrace), the format currently is not a standard that is directly supported in most GIS applications.
+
+While ODK supports collecting point and line-based geographic data, the format it uses to store data is not
+a widely accepted. 
+This has made it difficult for teams to import and work with the data in tools like QGIS after data collection.
+
+Ramani Huria team was faced with this problem and they wrote script that convert the data from geotrace 
+to Well-Known text format which is widely used standard. 
+
+The issue with scripts is they are not very user friendly. Recognizing the need for a more accessible solution, 
+the Ramani Huria team tasked me with creating a QGIS plugin to simplify this conversion process for everyday users.
+
+I developed a QGIS plugin that helps users to convert the ODK geotrace data into Well-Known text format by building upon the work that Ramani Huria had already started. 
+Since the team already had a [script](https://github.com/ivangayton/ODK_geotrace_to_WKT/blob/master/lines_to_wkt.py) written in Python.
+
+The plugin works on all QGIS 3 versions. See the following [how to use video](https://www.youtube.com/watch?v=GvxkoVP0-Dc) on plugin usage instructions.
+
+The plugin is intended to make geospatial data workflows smoother and more accessible, particularly for 
+community mapping teams and organizations using ODK in the field. By bridging the gap between mobile data collection 
+and GIS analysis, it enables more people to benefit from the power of open mapping tools.
+
+[Plugin repository](https://plugins.qgis.org/plugins/odktrace2wkt/)
+
+[Source code](https://github.com/Samweli/odktrace2wkt)]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Using AI in Trash Detection</title><link href="http://0.0.0.0:4000/AI-Trash-Detection/" rel="alternate" type="text/html" title="Using AI in Trash Detection" /><published>2019-08-25T00:00:00+00:00</published><updated>2019-08-25T00:00:00+00:00</updated><id>http://0.0.0.0:4000/AI-Trash-Detection</id><content type="html" xml:base="http://0.0.0.0:4000/AI-Trash-Detection/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/trash-detector.png)
+
+_Trash detection web application interface_
+
+## Trash detection from mapping images
+
+During the trash mapping activity [here](http://samweli.github.io/Trash-Map/), some of the collected trash images didn't 
+contain waste. This was mostly because certain photos were taken at legal dump sites,
+which weren’t clearly marked during data collection.
+
+One of the main issues was that the data collection process didn’t include any form 
+of tagging to specify whether an image contained waste, whether it was a legal or illegal dumping site,
+or if there was any visible trash at all. This lack of metadata posed a challenge for filtering 
+and interpreting the dataset effectively.
+
+To solve this, I decided to build a simple web application that can automatically
+detect whether an image contains trash. The purpose of this tool is to assist in 
+post-processing the mapping data by tagging images based on the presence or absence of visible waste.
+This step helps to clean up the dataset and make it more useful for further analysis, decision-making,
+or public awareness campaigns.
+
+
+The result application can be found [here](http://trash-detection.herokuapp.com/).
+
+Once the tool was ready, I ran it on the full set of collected images. The results were visualized through an interactive [web app](http://dar-trash-viz.netlify.app). You can explore these insights by navigating to the
+`Analysis` menu and selecting the `Trash Tagging` option. This section provides a breakdown of how many images 
+were flagged as containing waste versus those that weren’t, as well as other related statistics.
+
+
+In terms of performance, the tool achieved a rough accuracy of about 60%, meaning that 6 out of every 10 images were correctly tagged in
+terms of trash presence. While this is far from perfect, it's a useful first step toward automating the cleanup and classification of 
+large image datasets gathered in the field.
+
+Going forward, I plan to improve the [tool](https://github.com/ResilientDar/trash-detector)’s accuracy and possibly incorporate manual review options or allow users to
+contribute to labeling images. This could help create a more reliable and scalable system for waste detection in mapping projects.
+
+If you're interested in contributing, testing the tool, or sharing feedback, feel free to get in touch!]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">The Making of Trash Data Visualization</title><link href="http://0.0.0.0:4000/Trash-Map/" rel="alternate" type="text/html" title="The Making of Trash Data Visualization" /><published>2018-09-29T00:00:00+00:00</published><updated>2018-09-29T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Trash-Map</id><content type="html" xml:base="http://0.0.0.0:4000/Trash-Map/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/trash_map.png)
+
+_Online Trash Map_
+
+## Introduction
+
+In August 2018 [HOT](https://www.hotosm.org) together with [Nipe Fagio](http://nipefagio.co.tz) organized waste data collection activity, allocating more than 100 students/mappers to locate and collect information about the types of piles in the Dar es salaam City.
+
+The aim of this activity was to raise awareness to the responsible institutions for waste management about the importance of data-driven decision and policy making and also to showcase how waste data can be used to measure and evaluate the waste collection problem in Dar es salaam.
+
+The activity resulted into collection of more than 10,000 waste piles. After the activity the HOT team presented the data to  [TURP](https://www.worldbank.org/en/programs/tanzania-urban-resilience-program) program.
+
+## Visualizing the trash data
+
+As part of TURP team, we analyzed the data and built a web map that visualized and provide important insights for the nearly 10,000 points. We used [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/) together with a [React](https://reactjs.org/) framework, these enabled creating a vector based web map that has high rendering performance and a smooth user interaction.
+
+The trash web map can be accessed [here](http://dar-trash-viz.netlify.app) and source code for the map [here](https://github.com/ResilientDar/dar-trash-viz/).]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Developing Twaamtaro (Adopt a Drain)</title><link href="http://0.0.0.0:4000/Twaamtaro/" rel="alternate" type="text/html" title="Developing Twaamtaro (Adopt a Drain)" /><published>2017-01-30T00:00:00+00:00</published><updated>2017-01-30T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Twaamtaro</id><content type="html" xml:base="http://0.0.0.0:4000/Twaamtaro/"><![CDATA[<p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_logo.png" alt="" /></p>
+
+<h2 id="twaamtaro-tanzania">Twaamtaro Tanzania</h2>
+
+<p>Online platform that tracks local drain cleanliness &amp; information on solid waste deposits.
+Inspired by Adopt a Drain from Code for America!.</p>
+
+<h3 id="background">Background</h3>
+<p>Waste cleanness in Dar es salaam drains is rarely done, and when it is done, there is lack of dissemination of the work and drains status to respective leaders and stakeholders. There is always a need to raise community engagement in drains cleaning and to find innovative ways that can enable provision of reports on drains cleaness to the community.</p>
+
+<h3 id="leverage">Leverage</h3>
+
+<p>Community mapping project ‘ramani huria’ has collected the available data on the drainage network. These are available and  can be  found on openstreetmap, these data shows that the network has not covered the large part of the city and from different reports it is not frequently maintained in the areas it has covered. More details can be found <a href="http://ramanihuria.org/mapping-drainage-in-dar-es-salaam/">here</a></p>
+
+<p>Building on this work, arrangements were made to organize the community to frequently clean these drains so as to help water flow especially on flood prone areas, this went in parallel with development of application to monitor, store and show drains information called Twaa mtaro (Adopt a drain).</p>
+
+<p>Twaamtaro as a platform enables the community to report about cleaness activities that are done on drains, it does this by letting users send drains information through SMS, USSD and WEB, this enables even the average citizen who does not have access to the Internet to be able to use the platform.</p>
+
+<p>The workflow is citizen are assigned drains by the street leaders, they receive SMS notification from the platform, when the finish cleaning they can send SMS or use USSD or login into the online twaamtaro site and update the status of their drains.</p>
+
+<p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_in_action.png" alt="Twaamtaro in action" /></p>
+
+<p><em>Twaamtaro in action</em></p>
+
+<p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_pres.jpg" alt="Me presenting Twaamtaro to World Bank Tanzania Staffs" /></p>
+
+<p><em>Samweli (Team lead) presenting Twaamtaro to World Bank Tanzania Staffs</em></p>
+
+<p><a href="https://github.com/Samweli/twaamtaro">Source code</a></p>
+
+<p><a href="https://twaamtaro.org">Platform</a></p>]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Isochrone Maps Creation in QGIS</title><link href="http://0.0.0.0:4000/Isochrone-Maps/" rel="alternate" type="text/html" title="Isochrone Maps Creation in QGIS" /><published>2016-09-22T00:00:00+00:00</published><updated>2016-09-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Isochrone-Maps</id><content type="html" xml:base="http://0.0.0.0:4000/Isochrone-Maps/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/isochrone_map.png)
+
+_example isochrone map showing hospitals accessibility times in minutes by car_
+
+## Isochrone Map
+
+Isochrone maps are a powerful way to visualize accessibility and movement within geographic areas.
+Unlike traditional maps that focus on distances, isochrone maps illustrate the areas that can be reached 
+from a specific location within a given amount of time—whether by walking, driving, cycling, or public transportation. 
+These maps are particularly useful in urban planning, emergency response, transportation analysis 
+and public service delivery.
+
+For example, a city planner might use an isochrone map to evaluate how many residents can reach a health facility within
+30 minutes by foot or to identify underserved neighborhoods based on commute times to the nearest school.
+
+At the time of writing this post, there were limited options available for creating isochrone maps using open-source tools.
+Most services that offered isochrone generation were either commercial, limited in functionality, 
+or required API keys with usage restrictions. Additionally, QGIS( a free desktop GIS application) did not natively support
+the generation of isochrones, which presented a barrier for many users interested in spatial accessibility analysis
+without relying on proprietary software or paid APIs.
+
+Recognizing this gap, I created a QGIS plugin to enable users to generate isochrone maps 
+directly within the QGIS environment. This plugin extends the functionality of QGIS by allowing users to easily define
+origin points, provide travel networks, and generate accessibility zones using open routing services. It simplifies a process
+that previously required external tools or manual steps, making it far more accessible to planners, researchers, and civic
+technologists who rely on free and open-source GIS software.
+
+One of the core goals in developing the tool was to make it completely open source, so that it could be freely used, 
+adapted, and extended by the broader GIS and open data community. The plugin is hosted publicly and available for download,
+with full documentation and source code accessible [here](https://github.com/Samweli/isochrones).
+
+Since its release, the plugin has received a strong reception within the QGIS community. As of August 2019, 
+it had been downloaded over **7,000** times from the official [QGIS plugin repository](https://plugins.qgis.org/plugins/isochrones/#plugin-versions),
+highlighting the demand for accessible isochrone tools within the open-source GIS ecosystem. 
+These numbers continue to grow as more users discover its capabilities.
+
+The plugin is a contribution to the broader mission of opening access to geospatial analysis tools. 
+By lowering the barrier to entry for isochrone mapping, it empowers individuals and institutions especially 
+in resource-constrained settings to better understand, enable data based decision-making and 
+improve accessibility in their environments.
+
+### Links
+
+[Plugin repository](https://plugins.qgis.org/plugins/isochrones/)
+
+[Source code](https://github.com/Samweli/isochrones)]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Developing Flood Maps</title><link href="http://0.0.0.0:4000/Flood-Maps/" rel="alternate" type="text/html" title="Developing Flood Maps" /><published>2016-07-22T00:00:00+00:00</published><updated>2016-07-22T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Flood-Maps</id><content type="html" xml:base="http://0.0.0.0:4000/Flood-Maps/"><![CDATA[![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/flood_map.png)
+
+## Floods in Dar es salaam
+
+Dar es salaam is one of the fastest growing cities in Africa, it has a 5 million population and 5.6% percent 
+growth rate per year, it is also the most important economic center in Tanzania. This indicates
+that the city should undertake all social and economical preparations effectively accommodate population growth.
+	
+However, for the past years the city has been overwhelmed by the growth rate of the population leading to inadequate 
+public services provision, unequal resources sharing such as water, electricity and a dormant urban infrastructure. 
+The latter being the major cause for the recurring floods in the city.
+
+As the city continues to expand, much of the new development has occurred informally and without adequate planning.
+This unstructured urban sprawl has placed huge strain on the road network and drainage systems, making mobility
+increasingly difficult. During the rainy season, poorly planned settlements—often built in flood-prone areas, makes
+the situation more difficult by blocking natural water channels, further contributing to the severity and frequency of
+urban flooding.
+
+
+### Floods Map Tool
+
+In relation to the flood problem in Dar es salaam, I made an effort to help the society in reporting of the 
+floods events, believing this will enable measuring floods impact and foster robust response during raining seasons.
+
+An online flood map, Inspired by [flood map india](https://osm-in.github.io/flood-map/), a tool
+that shows flooded features in realtime as reported by map users, this is crowdsourced based effort to map 
+inundated features in Dar es salaam.
+
+In response to the flooding challenges in Dar es Salaam, I took the initiative to support the community by 
+developing a tool aimed at improving the reporting of flood events. I believe that by enabling timely and accessible 
+flood reporting, it will make it possible to better assess the impact of flooding and support more coordinated and effective
+responses during the rainy seasons. Collecting such data from those directly affected offers crucial insights into the 
+severity and spread of floods, helping both authorities and communities prepare and respond more efficiently.
+
+To bring this vision to life, I developed an online flood mapping platform, inspired by the [flood map india](https://osm-in.github.io/flood-map/) project. 
+The tool allows users to contribute real-time updates about flooded areas using a crowdsourced approach. 
+
+Similarly, the Dar es Salaam version of the map empowers residents to report inundated roads, neighborhoods, and key 
+infrastructure in real time. By relying on contributions from the public, the platform builds a dynamic, community-driven 
+picture of flood conditions across the city.
+
+This tool serves as both a public awareness and a practical response aid. It helps identify flood hotspots 
+as they occur, enabling faster decision-making for rerouting traffic, allocating emergency resources, or issuing alerts.
+Over time, this kind of community mapping can also support long-term urban planning by highlighting areas that require 
+drainage improvements or other interventions.
+
+The flood map is a step toward participatory resilience building. 
+By involving citizens directly in disaster response, it strengthens the relationship between the public, 
+urban planners, and emergency services, paving the way for a more informed and resilient Dar es Salaam.
+
+[Link to the Flood map](http://samweli.github.io/flood-map/)]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Code for Resilience</title><link href="http://0.0.0.0:4000/Code-for-Resilience/" rel="alternate" type="text/html" title="Code for Resilience" /><published>2016-05-30T00:00:00+00:00</published><updated>2016-05-30T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Code-for-Resilience</id><content type="html" xml:base="http://0.0.0.0:4000/Code-for-Resilience/"><![CDATA[![Code for Resilience Dar es salaam kickoff](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/code-for-resilience.png)
+
+## Code for Resilience Dar es salaam
+
+Dar es Salaam and Stone Town are the two primary cities of Mainland Tanzania and Zanzibar
+with populations of 5.5 million and 150,000 respectively. Each of these cities and their country
+have unique challenges and natural hazards. Dar es Salaam for instance is challenged by bi-annual flooding,
+impacting many thousands of its citizens every year. In response to this, the World Bank, GFDRR, 
+Humanitarian OpenStreetMap Team and the Red Cross are supporting the Tanzanian Commission of Science and Technology,
+Buni Innovation Hub, Dar es Salaam City Council, Ardhi University and the University of Dar es Salaam
+with a community mapping for flood resilience project, Ramani Huria. 
+
+In coordinating all of these actors, Ramani Huria has leveraged the skills of over 100 community members,
+150 students, collecting data in the most flood prone neighbourhoods of Dar es Salaam, making maps and
+underlying data freely available for Dar es Salaam.
+
+In 2015, Ramani Huria, in collaboration with the World Bank, had the opportunity to host the [Code for Resilience](https://understandrisk.org/initiative/code-for-resilience/#:~:text=Code%20for%20Resilience%20(CfR)%20fosters,risks%20posed%20by%20natural%20disasters.) 
+program in Dar es Salaam, Tanzania. This initiative aims at bringing together local talent, international expertise, and
+community knowledge under one roof with a shared goal: to develop innovative tools that address the real challenges
+posed by natural disasters in a specified region.
+
+As part of the World Bank team, I supervised the Code for Resilience fellows and mentored them. 
+Each of the fellows was assigned a problem statement (project) from which they had to design and implement a solution. 
+
+Each of these projects and others were initiated on January 30th 2015, via a collaborative event at the Buni Innovation Hub in Tanzania, 
+the event brought together Code for Resilience Fellows from the University of Dar es Salaam, 
+experts from the Dar es Salaam City Council, and local developers. 
+This initiative aimed to develop tools that enhance disaster preparedness and community resilience. 
+Among the projects initiated were the automation of population statistics delivery and the creation of 3D-printed 
+weather stations using recycled plastic, reflecting a commitment to sustainable and accessible technological solutions.
+
+One significant project from this event was the development of the [WorldPop API](https://github.com/codeforresilience/worldpop-api), designed to facilitate access to 
+population data. This tool allows users to query area population statistics from the WorldPop dataset, 
+providing valuable insights for planning and response strategies in disaster-prone regions. 
+By automating the retrieval of demographic information, the API supports informed decision-making and 
+efficient resource allocation during emergencies.
+
+Another key project was the [Weather Dashboard](https://github.com/codeforresilience/weatherDashboard), tailored to provide real-time weather forecasts for Tandale,
+a neighborhood in Dar es Salaam. This dashboard offers meteorological data, enabling residents 
+and authorities to monitor weather conditions and prepare for potential hazards. The tool exemplifies how 
+localized information systems can empower communities to respond proactively to environmental challenges.
+
+These initiatives underscore the potential of collaborative efforts in leveraging technology for disaster resilience.
+By combining local expertise with innovative tools, the projects developed at the Buni Innovation Hub demonstrate a 
+promising path toward a more resilient Tanzania!
+
+
+![Team lead interviewed for Code for Resilience Tanzania Program](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/cfr_interview.jpg-large)
+_Samweli (Team Lead) getting interviewed for the Code for Resilience Tanzania Program_
+
+[Video](https://www.youtube.com/watch?v=KYnkZE9r0UQ&t=6s)]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Collection of Daladala Routes</title><link href="http://0.0.0.0:4000/Daladala-Routes/" rel="alternate" type="text/html" title="Collection of Daladala Routes" /><published>2016-04-30T00:00:00+00:00</published><updated>2016-04-30T00:00:00+00:00</updated><id>http://0.0.0.0:4000/Daladala-Routes</id><content type="html" xml:base="http://0.0.0.0:4000/Daladala-Routes/"><![CDATA[![Dar es salaam transport routes (Bus routes in red)](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/bus_routes.png)
+
+_Map of public transport in Dar es salaam [link](https://api.mapbox.com/styles/v1/samtwesa/cijptupyz002d94kq81o26eww.html?fresh=true&title=true&access_token=pk.eyJ1Ijoic2FtdHdlc2EiLCJhIjoiZTc1OTQ4ODE0ZmY2MzY0MGYwMDNjOWNlYTYxMjU4NDYifQ.F1zCcOYqpXWd4C9l9xqvEQ#19.3/-6.816097/39.280324/0)_
+
+## Dar es salaam Transporht
+
+Dar es Salaam’s public transport system is primarily built around Daladala minibuses, which form the backbone of daily commuting for the majority of the city's residents. In addition to Daladalas, the city also operates a ferry service across the harbor, a commuter train, and a modern Bus Rapid Transit (BRT) system known as DART (Dar Rapid Transit), which began operations in 2016 to improve urban mobility.
+
+Back in 2015, as part of the Ramani Huria team, we collaborated with [ally](http://www.door2door.io), a transport and mobility-focused company, on a project to map the entire Daladala minibuses network of Dar es Salaam. This was an initiative aimed at bringing greater visibility and structure to the informal and semi-formal transport system that millions rely on every day.
+
+Our main task was to organize and manage teams of local mappers, assigning them specific bus routes across the city to document. These mappers would ride Daladalas, recording routes and frequencies using GPS-enabled tools. This data collection was essential for building a comprehensive open dataset of the city's transport network.
+
+The project not only helped visualize the complex web of routes but also laid the groundwork for future urban planning, route optimization, and the integration of digital transport tools. It was one of the early examples in the region of using open mapping and data science to make cities more accessible and livable.
+
+
+![Mappers](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/daladala_mapping.png)
+
+_Mappers boarding Daladala buses to map routes_
+
+[Here](https://samweli.github.io/dar-bus-tracking) is a live demo of the bus route data that were collected, showing the mapping process in action. This interactive map showcases the actual tracks recorded by mappers as they go through different Daladala routes throughout the city — a powerful visual representation of just how extensive and vital this transport network is.
+
+Additionally, we documented the entire project and made the data open for everyone. You can find a detailed overview of the project and its results, on the Dar es Salaam Transport Wiki hosted by OpenStreetMap. This serves as a valuable resource for anyone looking to understand urban transport mapping or to replicate similar projects in other cities.
+The wiki for the project can be found here [transport wiki](https://wiki.openstreetmap.org/wiki/Dar_es_Salaam/Transport).]]></content><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry></feed>
