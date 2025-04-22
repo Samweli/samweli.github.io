@@ -34,7 +34,7 @@ _Twaamtaro in action_
 
 ![Me presenting Twaamtaro to World Bank Tanzania Staffs](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/twaamtaro_pres.jpg)
 
-_Me presenting Twaamtaro to World Bank Tanzania Staffs_
+_Samweli (Team lead) presenting Twaamtaro to World Bank Tanzania Staffs_
 
 [Source code](https://github.com/Samweli/twaamtaro)
 
