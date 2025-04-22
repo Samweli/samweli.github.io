@@ -11,19 +11,37 @@ published: true
 ![](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/undp-hackathon.jpeg)
 
 ## The Last Mile
-That was the buzzword for the hackathon carrying a meaning that after all the years of collecting, organizing and storing climate data, it is now time for technology to make use of them and provide cutting edge applications.
+That was the buzzword for the hackathon carrying a meaning that after all the years of collecting, organizing and storing climate data, 
+it is now time for technology to make use of them and provide cutting edge applications.
 
-The United Nations Development Programme (UNDP) launched this for the application developers to create new web or mobile applications that give out weather data in areas trying to adapt to climate change in the region.
+The United Nations Development Programme (UNDP) launched this for the application developers to create new 
+web or mobile applications that serves weather data in areas trying to adapt to climate change in the region.
 
-Under the UNDP programme called Climate Information for Resilient Development in Africa (CIRDA), software developers were invited to Livingstone, Zambia to participate.
+Under the UNDP programme called Climate Information for Resilient Development in Africa (CIRDA), 
+software developers were invited to Livingstone, Zambia to participate in the hackathon.
 
-The developers formed teams to create prototype mobile and information-system-based applications and technological solutions to share actionable weather and climate information with a variety of stakeholders, sectors and end-users.
+The developers formed teams to create prototypes, mobile and information-system-based applications and
+technological solutions that shares actionable weather and climate information to a variety of stakeholders,
+sectors and end-users.
 
-As a result different applications and platforms were prototyped [here](https://climateaction.io/) is the list.
+As a result different applications, platforms and proof of concepts prototypes were built, see the full list [here](https://climateaction.io/).
 
-I had a chance to go this hackathon, it was wonderful to meet people who have been working on useful information on climate. It was so amazing when we got to realize how much some of the companies have worked on providing useful tools around gathered climate data.
+I had a chance to participate in the hackathon, it was wonderful to meet people who have been working on
+climate data. There were so much data with variety supplied by different climate change stakeholders,
+it was interesting challenge to be part of a group that was working on coming up and building 
+useful tools around the gathered climate data.
 
-Me and three other developers worked on developing a framework that we aimed to allow regional experts to communicate their knowledge with local communities. We call it [ClimateFrame](https://github.com/climate-action-hackathon/ClimateFrame)
+As part of a development team of four, we collaboratively built [ClimateFrame](https://github.com/climate-action-hackathon/ClimateFrame), a framework aimed at enabling regional
+experts to effectively communicate their knowledge with local communities.
+
+The ClimateFrame framework allow regional experts to define and automate actions—such as
+sending alerts or messages—based on specific events in live datasets. By bridging fragmented data sources 
+with local expertise, it enables the creation of communication systems that inform and protect 
+vulnerable communities. 
+ 
+For example, an expert can select relevant datasets, set conditions for 
+triggering alerts, and deliver messages via text or ASCII art to subscribed users when certain thresholds are met.
+This approach simplifies the process of turning complex data into actionable, localized insights.
 
 ![ClimateFrame group working on the prototype](https://raw.githubusercontent.com/samweli/jekyll-now/master/images/climate-frame-undp.jpg)
 _ClimateFrame group on action_
