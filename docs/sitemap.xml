@@ -41,10 +41,6 @@
 <lastmod>2019-09-03T00:00:00+00:00</lastmod>
 </url>
 <url>
-<loc>http://0.0.0.0:4000/QGIS-Development-Using-Docker/</loc>
-<lastmod>2024-12-01T00:00:00+00:00</lastmod>
-</url>
-<url>
 <loc>http://0.0.0.0:4000/about/</loc>
 </url>
 <url>
@@ -119,8 +115,5 @@
 </url>
 <url>
 <loc>http://0.0.0.0:4000/page2/</loc>
-</url>
-<url>
-<loc>http://0.0.0.0:4000/page3/</loc>
 </url>
 </urlset>
