@@ -5,9 +5,9 @@ title: Streamlining QGIS Development using Docker
 published: false
 ---
 
-![](../assets/images/checkers_board_local.png)
+![](../assets/images/qgis_dev_splash.png)
 
-_QGIS Dev Splash_
+_QGIS dev splash image_
 
 ## QGIS Development with Docker
 
@@ -17,12 +17,12 @@ reusable approach to running and setting up QGIS and its components across a wid
 Docker images are especially useful for those looking to run unreleased versions (nightly builds and master branch changes)
 of QGIS, create robust headless testing environments, and facilitate the setup and compilation of QGIS development environments. 
 
-## QGIS Docker Images in Action
+## Docker images in action
 
 In this post, I’m going to share the benefits of using Docker when setting up QGIS development, and provide
 a practical guide to becoming a QGIS contributor.
 
-## The Traditional Way of Compiling QGIS Source
+## The Traditional way of compiling QGIS source
 
 The usual approach to compiling QGIS from source involves downloading and installing various dependencies
 and prerequisites for your operating system. You then need to manually configure the build tools and process to
