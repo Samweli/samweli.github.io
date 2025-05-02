@@ -117,7 +117,7 @@ what version to work on by checking out the corresponding QGIS version git tag.
 Create a `docker-compose.yml` file that defines the necessary services and environment. 
 The file will include settings for the QGIS build dependencies and X11 forwarding for GUI applications.
 
-The `docker-compose.yml` file should contain the below structure
+The `docker-compose.yml` file should contain the below structure and content.
 
 ```yml
 version: '3'
@@ -140,7 +140,7 @@ volumes:
   build:
 ```
 
-where `qgis/qgis3-build-deps-22.04-qt5:latest` is the image responsible for all the QGIS development dependencies and
+Where `qgis/qgis3-build-deps-22.04-qt5:latest` is the image responsible for all the QGIS development dependencies and
 recommended for use, other images can be fetched from here https://hub.docker.com/u/qgis?page=1&search=build-deps
 
 ### 3. Build the Docker environment
