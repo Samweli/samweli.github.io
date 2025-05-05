@@ -11,7 +11,7 @@ published: true
 
 _Map of public transport in Dar es salaam [link](https://api.mapbox.com/styles/v1/samtwesa/cijptupyz002d94kq81o26eww.html?fresh=true&title=true&access_token=pk.eyJ1Ijoic2FtdHdlc2EiLCJhIjoiZTc1OTQ4ODE0ZmY2MzY0MGYwMDNjOWNlYTYxMjU4NDYifQ.F1zCcOYqpXWd4C9l9xqvEQ#19.3/-6.816097/39.280324/0)_
 
-## Dar es salaam Transporht
+## Dar es salaam Transport
 
 Dar es Salaam’s public transport system is primarily built around Daladala minibuses, which form the backbone of daily commuting for the majority of the city's residents. In addition to Daladalas, the city also operates a ferry service across the harbor, a commuter train, and a modern Bus Rapid Transit (BRT) system known as DART (Dar Rapid Transit), which began operations in 2016 to improve urban mobility.
 
