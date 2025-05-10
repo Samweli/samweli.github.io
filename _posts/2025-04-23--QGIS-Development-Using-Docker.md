@@ -11,24 +11,27 @@ _QGIS dev splash image_
 
 ## QGIS Development with Docker
 
-In recent years, the QGIS Development team has been building and sharing official 
-QGIS Docker images via the QGIS Docker Hub. This initiative helps provide an effective,
-reusable approach to running and setting up QGIS and its components across a wide variety of use cases.
-Docker images are especially useful for those looking to run unreleased versions (nightly builds and master branch changes)
-of QGIS, create robust headless testing environments, and facilitate the setup and compilation of QGIS development environments. 
+In recent years, the [QGIS Development team](https://github.com/qgis/QGIS) has been building and sharing official 
+QGIS Docker images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective,
+reusable approach to running and setting up QGIS and its components across a wide variety of use cases and environments.
+For this instance the Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
+of QGIS, creating robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
+ installing/using multiple QGIS versions in an operating system (**a topic for another blog post**!!). 
 
-## Docker images in action
 
 In this post, I’m going to share the benefits of using Docker when setting up QGIS development, and provide
-a practical guide to becoming a QGIS contributor.
+a guide to becoming a QGIS contributor. I will touch on the normal way of setting up QGIS development
+and explain its pros and cons compared to the Docker-based approach. The whole QGIS development workflow is 
+a huge aspect containing various components, general practices and a number of tools, I'm not going to cover all of these here,
+but I will address the high-level structure that anyone (even a beginner) can adopt and use for the development of core QGIS features.
 
-## The Traditional way of compiling QGIS source
+## The traditional way of compiling QGIS Desktop
 
-The usual approach to compiling QGIS from source involves downloading and installing various dependencies
-and prerequisites for your operating system. You then need to manually configure the build tools and process to
+QGIS desktop core is mainly developed using C++, using the [Qt framework](https://www.qt.io/product/framework). The usual approach for compiling QGIS from source involves downloading and installing various dependencies
+and prerequisites for your operating system. Necessary build tools are needed to be manually configured and processed in order to
 compile QGIS from its source code. For more info about normal way of compilation [see](https://github.com/qgis/QGIS/blob/master/INSTALL.md) 
 
-For example, on Ubuntu 22.04, you would need to install a long list of dependencies such as:
+For example, on Ubuntu 22.04, you would need to install a list of dependencies such as:
 
 - **Build Tools**: `bison`, `build-essential`, `cmake`, `ccache`, `flex`, `git`
 - **Geospatial Libraries**: `libgdal-dev`, `libgeos-dev`, `libproj-dev`, `libpq-dev`
@@ -36,13 +39,22 @@ For example, on Ubuntu 22.04, you would need to install a long list of dependenc
 - **Python Dependencies**: `python3-dev`, `python3-gdal`, `python3-lxml`, `python3-psycopg2`
 - **Additional Dependencies**: `doxygen`, `graphviz`, `protobuf-compiler`, `libspatialindex-dev`, `qtbase5-dev`
 
+![](../assets/images/long_list.webp)
+
+_Long list ehh!!_
+
+
 This process involves not only installing the correct versions of all these packages but also managing 
 potential conflicts between them. Additionally, maintaining these dependencies across different OS 
 versions can be problematic, leading to frequent setup issues and the need for manual troubleshooting.
 
+It would have been nice if the dependencies fetch could only feature a few set of commands, this would help
+especially beginners to jumpstart the whole QGIS development setup and skip past all the issues that come with 
+build tools.
+
 ## Why use Docker?
 
-There are several compelling reasons to use Docker for different tasks:
+There are several compelling reasons to use Docker for different QGIS tasks:
 
 ### 1. Running unreleased versions
 Docker images allow you to easily run nightly builds or versions from the master branch of QGIS.
