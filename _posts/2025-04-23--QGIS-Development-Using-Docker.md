@@ -9,7 +9,7 @@ published: false
 
 _QGIS dev splash image_
 
-## QGIS Development with Docker
+## QGIS Development using Docker
 
 In recent years, the [QGIS Development team](https://github.com/qgis/QGIS) has been building and sharing official 
 QGIS Docker images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective,
@@ -256,15 +256,20 @@ heavily appreciated.
 
 Before starting contributing to the QGIS source here are important things go over first:
 
+- Familiarize with C++ and [Qt framework](https://www.qt.io/product/framework);
 - Review the QGIS coding standards; This will help in making sure reviewers can provide right feedback and 
   the suggested changes are easily reviewable.
-- Create or find issue related to the problem; Tracking discussions will provide context for the targeted contribution.
-- Run tests locally, it won't look good if reviewers find minor bugs when reviewing new changes. Always make sure to catch regressions and 
-  new changes bugs that can be detected through running tests.
-- Documentation new changes; The code and commit should be descriptive enough to provide enough information about the work
+- Create or find issue related to the problem; Tracking discussions will provide context for the target contribution.
+- Run tests locally; It won't look good if reviewers find minor bugs when reviewing new changes. Always make sure to catch regressions and 
+  new changes bugs that can be detected early by running unit tests.
+- Documentation on new changes; The code, commit and changes details should be descriptive enough to provide enough information about the work
   that is about to be integrated.
 
-For the full guide QGIS development see the developers guideline found [here](https://docs.qgis.org/3.40/en/docs/developers_guide
+Finally don't stress out, go ahead and make the pull request! Contributions don't have to be perfect and reviewers are 
+always there to improve the changes.
+
+
+For the full guide on QGIS development see the developers guideline found [here](https://docs.qgis.org/3.40/en/docs/developers_guide
 ) 
 
 
