@@ -40,7 +40,7 @@ For example, on Ubuntu 22.04, you would need to install a list of dependencies s
 - **Additional Dependencies**: `doxygen`, `graphviz`, `protobuf-compiler`, `libspatialindex-dev`, `qtbase5-dev`
 
 <div align="center">
-  <img src="../assets/images/long_list.webp" />
+  <img alt="image showing a long list of items" src="../assets/images/long_list.webp" />
   <p align="center">Long list ehh!!</p>
 </div>
 
@@ -97,8 +97,14 @@ pre-configured with everything you need. This allows you to focus on development
 hours troubleshooting setup issues.
 
 ## Docker in action
+
 Now that we have covered the rationale behind using Docker for setting up QGIS development, lets take a look 
 at the actual work and the required steps to set Docker configurations.
+
+<div align="center">
+  <img src="../assets/images/lets_do_this.gif" />
+</div>
+
 
 ### Prerequisites
 Running on a Linux environment, ensure that Docker, Docker Compose, Git, and an X11 server are installed and running on your system.
