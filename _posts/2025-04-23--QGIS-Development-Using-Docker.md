@@ -12,7 +12,7 @@ _QGIS dev splash image_
 ## QGIS Development using Docker
 
 In recent years, the [QGIS Development team](https://github.com/qgis/QGIS) has been building and sharing official 
-QGIS Docker images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective,
+QGIS [Docker](https://www.docker.com) images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective,
 reusable approach to running and setting up QGIS and its components across a wide variety of use cases and environments.
 For this instance the Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
 of QGIS, creating robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
@@ -40,7 +40,7 @@ For example, on Ubuntu 22.04, you would need to install a list of dependencies s
 - **Additional Dependencies**: `doxygen`, `graphviz`, `protobuf-compiler`, `libspatialindex-dev`, `qtbase5-dev`
 
 <div align="center">
-  <img alt="image showing a long list of items" src="../assets/images/long_list.webp" />
+  <img alt="a gif showing a long list of items" src="../assets/images/long_list.webp" />
   <p align="center">Long list ehh!!</p>
 </div>
 
@@ -56,42 +56,43 @@ build tools.
 
 The Docker approach makes it easier to set up a QGIS development environment, avoiding the challenges and
 time-consuming tasks involved with manually installing all the required dependencies and configuring the system.
+Developer only needs to know how to use Docker in order to use the setup, no other extra skills are needed.
 
-## Development setup benefits
+## Benefits
 
 With Docker, the complexity of setting up a QGIS development environment is drastically reduced. 
 Docker containers allow you to package everything needed to run QGIS, including its dependencies, 
 into a single environment. Here are some key benefits of using Docker for QGIS development:
 
-### 1. Easy setup
+#### Easy setup
 Docker enables a "create once, run anywhere" approach. All the dependencies required to compile 
 QGIS are bundled into the Docker image, huge thanks to QGIS development team for making this possible,
-this makes it easy to start working on QGIS development without
+this simplifies the whole process of dependencies fetching QGIS development without
 worrying about compatibility or dependency issues.
 
 The only thing you need to run a Docker container
 is Docker itself, which is available on most platforms.
 
-### 2. Platform independence
+#### Platform independence
 One of Docker’s greatest advantages is that it abstracts away the underlying operating system. 
 Whether you’re using Linux, macOS, or Windows, Docker ensures that the QGIS development environment
 will be the same across all platforms. Eliminating the need to configure each OS individually and 
 ensures consistency. The main reason for this is that some operating systems doesn't support directly installation
-of some QGIS dependencies hence not ensuring a standard one for all development configuration.
+of some QGIS dependencies hence not ensuring a standard one for all development configurations.
 
-### 3. Reproducibility
+#### Reproducibility
 Docker images ensure that you can share your development environment with others, making it easier for
 collaborators or new contributors to get started. This reproducibility is essential in open-source projects like
 QGIS, where contributors may come from a variety of environments. The docker environment setup specifically for this 
-case includes a configuration file `docker-compose.yml` that can shared with the target QGIS repository tag/branch
-/commit and that should be enough to make it work in any other environment given the prerequisite Docker images 
+case includes a configuration file `docker-compose.yml` that can be shared with the target QGIS repository tag/branch
+/commit and that should be enough to make it work in any other environment given the needed Docker images 
 are available.
 
-### 4. Headless and isolated environment
+#### Headless and isolated environment
 Docker allows you to run QGIS in a headless, isolated environment, which is ideal for continuous integration,
-automated testing, and environments where you don’t need a graphical interface.
+automated testing, and in environments where you don’t have graphical interface unit.
 
-### 5. Simplified compilation
+#### Simplified compilation
 Instead of manually managing and installing dependencies, the Docker image for QGIS comes 
 pre-configured with everything you need. This allows you to focus on development rather than spending
 hours troubleshooting setup issues.
@@ -99,10 +100,10 @@ hours troubleshooting setup issues.
 ## Docker in action
 
 Now that we have covered the rationale behind using Docker for setting up QGIS development, lets take a look 
-at the actual work and the required steps to set Docker configurations.
+at the actual work and the required steps to set Docker and spin up QGIS from it.
 
 <div align="center">
-  <img src="../assets/images/lets_do_this.gif" />
+  <img alt="a gif showing a team about to work" src="../assets/images/lets_do_this.gif" />
 </div>
 
 
@@ -230,15 +231,12 @@ in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don't want t
 Overall the availability of the QGIS Docker images brings other several compelling use cases apart for simplifying the development, 
 here are some of the reasons:
 
-### 1. Running unreleased versions
+#### Running unreleased versions
 Docker images allow you to easily run nightly builds or versions from the master branch of QGIS.
 This is especially useful for testing new features or bug fixes that have not yet been officially released.
+pelines or for running QGIS in a server environment without a GUI.
 
-### 2. Headless testing environments
-Docker enables the creation of headless environments for automated testing. This is 
-important for continuous integration (CI) pipelines or for running QGIS in a server environment without a GUI.
-
-### 3. Legacy QGIS versions
+#### Legacy QGIS versions
 If you need to support older versions of QGIS in an operating system that only allows the latest versions,
 Docker can help by creating isolated environments where specific versions of QGIS can run independently of
 the system’s package manager.
