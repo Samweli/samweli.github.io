@@ -117,11 +117,16 @@ This will provide you with the latest source code to configure and compile the a
 QGIS official repository can be accessed from [here](https://github.com/qgis/QGIS). Users can select
 what version to work on by checking out the corresponding QGIS version git tag.
 
+```commandline
+git clone https://github.com/qgis/QGIS
+```
+
 ### 2. Create Docker compose configuration
 Create a `docker-compose.yml` file that defines the necessary services and environment. 
 The file will include settings for the QGIS build dependencies and X11 forwarding for GUI applications.
 
-The `docker-compose.yml` file should contain the below structure and content.
+The `docker-compose.yml` file should contain the below structure and content. This file should
+be located in the root of the QGIS directory.
 
 ```yml
 version: '3'
@@ -151,6 +156,8 @@ recommended for use, other images can be fetched from here https://hub.docker.co
 Use Docker Compose to build the development environment based on the `docker-compose.yml` configuration.
 This will download the necessary Docker image with all build dependencies and set up the environment for compiling QGIS.
 
+In this step we assume all the Docker tools have already been installed in the system, if not see
+this [page](https://www.docker.com/get-started/) on how to 
 Use the following command to run the build
 
 ```commandline
@@ -161,7 +168,7 @@ docker-compose up
 Configuring and build the QGIS source can be done by passing build commands directly
 in Docker exec command or via an interactive bash shell.
 
-For the later option, launch the Docker container with an interactive bash shell to begin development. 
+For the latter option, launch the Docker container with an interactive bash shell to begin development. 
 This will provide you with a command-line interface inside the container to manage the build process.
 
 Command to start interactive bash shell
@@ -226,6 +233,14 @@ For those using Linux distros there is a [Jupyter notebook](https://github.com/S
 that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
 in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don't want to run commands in terminal.
 
+
+
+### Notes and troubleshooting
+Be aware that the build process may take significant time depending on your system's resources. 
+If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.
+
+
+
 ## More benefits
 
 Overall the availability of the QGIS Docker images brings other several compelling use cases apart for simplifying the development, 
@@ -240,13 +255,6 @@ pelines or for running QGIS in a server environment without a GUI.
 If you need to support older versions of QGIS in an operating system that only allows the latest versions,
 Docker can help by creating isolated environments where specific versions of QGIS can run independently of
 the system’s package manager.
-
-
-
-### Notes and troubleshooting
-Be aware that the build process may take significant time depending on your system's resources. 
-If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.
-
 
 ## Contributing to QGIS
 
