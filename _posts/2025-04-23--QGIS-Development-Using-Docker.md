@@ -171,15 +171,19 @@ volumes:
 ```
 
 Where `qgis/qgis3-build-deps-22.04-qt5:latest` is the image responsible for all the QGIS development dependencies and
-recommended for use, other images can be fetched from here https://hub.docker.com/u/qgis?page=1&search=build-deps
+recommended for use, other images can be fetched from here https://hub.docker.com/u/qgis?page=1&search=build-deps.
+
+The `volumes` part contain information of where to mount and link the QGIS source and the build directory, while the `environment`
+section defines all the necessary variable required to enable display configuration between the host and the Docker containers.
 
 ### 3. Build the Docker environment
 Use Docker Compose to build the development environment based on the `docker-compose.yml` configuration.
 This will download the necessary Docker image with all build dependencies and set up the environment for compiling QGIS.
 
 In this step we assume all the Docker tools have already been installed in the system, if not see
-this [page](https://www.docker.com/get-started/) on how to 
-Use the following command to run the build
+this [page](https://www.docker.com/get-started/) on how to install the essential Docker tools.
+
+Use the following commands to run the build and start the Docker container.
 
 ```bash
 
@@ -204,8 +208,9 @@ If the above commands are successful, the following content will be displayed in
 Configuring and build the QGIS source can be done by passing build commands directly
 in Docker exec command or via an interactive bash shell.
 
-For the latter option, launch the Docker container with an interactive bash shell to begin development. 
-This will provide you with a command-line interface inside the container to manage the build process.
+For the latter option, in order launch the Docker container with an interactive bash shell to begin development. 
+Use the below command, this will provide you with a command-line interface inside the container 
+to manage the build process.
 
 Command to start interactive bash shell
 
@@ -219,10 +224,44 @@ docker compose exec -it qgis-dev-live bash
 Run CMake and Ninja commands inside the container to configure and compile QGIS. 
 This will build QGIS from source with specific configuration options like enabling plugins and GRASS integration.
 
-Make sure the shell is in the correct directory before running the build command
+At the time of writing this post the used QGIS docker image had one issue in linking the QScintilla2 library.
+The following commands makes sure that the library symlinks are created in the folder that QGIS expects them to be.
+
+This should not be the normal way of doing this, once the upstream image is fixed this step will not be needed anymore.
+
 
 ```bash
 
+docker compose run qgis-dev-live bash -c "\
+  mkdir -p /usr/lib/x86_64-linux-gnu && \
+  echo 'Checking for QScintilla2 libraries...' && \
+  if [ -f /usr/lib/libqscintilla2_qt5.so ]; then \
+    echo 'Found QScintilla2 libraries in /usr/lib - creating symlinks...' && \
+    ln -sf /usr/lib/libqscintilla2_qt5.so /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so && \
+    [ -f /usr/lib/libqscintilla2_qt5.so.15 ] && ln -sf /usr/lib/libqscintilla2_qt5.so.15 /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so.15 && \
+    [ -f /usr/lib/libqscintilla2_qt5.so.15.0 ] && ln -sf /usr/lib/libqscintilla2_qt5.so.15.0 /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so.15.0 && \
+    [ -f /usr/lib/libqscintilla2_qt5.so.15.0.0 ] && ln -sf /usr/lib/libqscintilla2_qt5.so.15.0.0 /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so.15.0.0 && \
+    echo 'Created QScintilla2 symlinks' && \
+    ls -la /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so*; \
+  else \
+    echo 'QScintilla2 libraries not found in /usr/lib' && \
+    echo 'Checking existing libraries in /usr/lib/x86_64-linux-gnu...' && \
+    ls -la /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so* || echo 'No QScintilla2 libraries found'; \
+  fi
+"
+````
+
+Now after fixing the library symlinks, we will now head over to the main part of the QGIS compilation.
+In this step we will configure, build and install QGIS using [CMake](https://cmake.org/)(a meta build tool) and
+[Ninja](https://github.com/ninja-build/ninja) (build tool).
+
+The commands also mark the Git directory as safe globally, in order to avoid trust warnings when using
+Git in the build.
+
+
+```bash
+
+  docker compose run qgis-dev-live bash -c "\
     echo '[$(date)] Starting CMake configuration...' && \
     cmake ../QGIS -GNinja \
         -DWITH_STAGED_PLUGINS=ON \
@@ -244,17 +283,40 @@ Make sure the shell is in the correct directory before running the build command
     echo '[$(date)] QGIS build completed.' && \
     echo '[$(date)] Starting QGIS installation...' && \
     VERBOSE=1 ninja -v install && \
-    echo '[$(date)] Installation completed.'
+    echo '[$(date)] Installation completed.'"
     
 
 ```
+Short explanation about the passed build flags
+
+
+```yml
+
+-GNinja: Use Ninja as the build system..
+-DWITH_STAGED_PLUGINS=ON: Enable staged QGIS plugins(plugins that comes with QGIS).
+-DCMAKE_INSTALL_PREFIX=/usr: Set installation path to /usr.
+-DWITH_GRASS=ON: Enable GRASS GIS integration.
+-DSUPPRESS_QT_WARNINGS=ON: Hide Qt deprecation warnings.
+-DENABLE_TESTS=OFF: Skip building test code.
+-DWITH_QSPATIALITE=ON: Enable support for SpatiaLite.
+-DWITH_QWTPOLAR=OFF: Disable QwtPolar support (not needed).
+-DWITH_APIDOC=OFF: Disable API documentation generation.
+-DWITH_ASTYLE=OFF: Skip AStyle code formatting check.
+-DWITH_DESKTOP=ON: Build the desktop QGIS application.
+-DWITH_BINDINGS=ON: Build Python bindings.
+-DDISABLE_DEPRECATED=ON: Disable deprecated code in the build.
+```
+
+Some of these flags can be removed or turned off if you want to boost the compile time.
 
 The above series of commands can take a while to finish depending on how powerful the used PC.
 
 ### 6. Run QGIS from the build
-After building, run the compiled QGIS application from the container to verify the setup. 
-The xhost command is for allowing the Docker tool to control access to the X11 display
-and the `qgis` command inside the container is used to launch the application.
+After the build is successfully, run the compiled QGIS application from the container to verify 
+the installation and open the compiled QGIS application.
+
+Using the xhost command setup the Desktop for allowing the Docker tool to control access to the X11 display
+and enabling using the built QGIS binary `qgis` from inside the container to launch the application.
 
 ```bash
 
@@ -263,7 +325,7 @@ xhost +local:docker
 
 ```bash
 
-./output/bin/qgis
+docker compose run qgis-dev-live bash -c "./output/bin/qgis"
 ```
 
 After running the above commands, hopefully the QGIS desktop application should start! 
@@ -283,12 +345,12 @@ If you encounter issues, check your X11 configuration and Docker permissions for
 ## More benefits
 
 Overall the availability of the QGIS Docker images brings other several compelling use cases apart for simplifying the development, 
-here are some of the reasons:
+here are some examples:
 
 #### Running unreleased versions
 Docker images allow you to easily run nightly builds or versions from the master branch of QGIS.
-This is especially useful for testing new features or bug fixes that have not yet been officially released.
-pipelines or for running QGIS in a server environment without a GUI.
+This is especially useful for testing new features or bug fixes that have not yet been officially released 
+or for running QGIS in a server environment without a GUI.
 
 #### Legacy QGIS versions
 If you need to support older versions of QGIS in an operating system that only allows the latest versions,
@@ -313,15 +375,15 @@ Before starting contributing to the QGIS source here are some of important thing
 - Create or find issue related to the problem; Tracking discussions will provide context for the target contribution.
 - Run tests locally; It won't look good if reviewers find minor bugs when reviewing new changes. Always make sure to catch regressions and 
   new changes bugs that can be detected early by running unit tests.
-- Documentation on new changes; The code, commit and changes details should be descriptive enough to provide enough information about the work
-  that is about to be integrated.
+- Documentation on new changes; The code, commit and changes details should be descriptive enough to provide enough information about the 
+  proposed work.
 
 Finally don't stress out, go ahead and make the pull request! Contributions don't have to be perfect and reviewers are 
 always there to improve the new changes.
 
 
 For the full guide on QGIS development see the developers guideline found [here](https://docs.qgis.org/3.40/en/docs/developers_guide
-) 
+).
 
 
 ## Reach out
