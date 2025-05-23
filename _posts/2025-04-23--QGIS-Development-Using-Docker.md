@@ -222,12 +222,13 @@ docker compose exec -it qgis-dev-live bash
 
 ### 5. Configure and build QGIS
 Run CMake and Ninja commands inside the container to configure and compile QGIS. 
-This will build QGIS from source with specific configuration options like enabling plugins and GRASS integration.
+This will build QGIS from source with specific configuration options like enabling plugins and
+[GRASS](https://grass.osgeo.org/) integration.
 
 At the time of writing this post the used QGIS docker image had one issue in linking the QScintilla2 library.
 The following commands makes sure that the library symlinks are created in the folder that QGIS expects them to be.
 
-This should not be the normal way of doing this, once the upstream image is fixed this step will not be needed anymore.
+This should not be the usual way of doing this, once the upstream image is fixed this step will not be needed anymore.
 
 
 ```bash
@@ -287,8 +288,7 @@ Git in the build.
     
 
 ```
-Short explanation about the passed build flags
-
+Outline for the passed CMake build flags.
 
 ```yml
 
@@ -307,9 +307,11 @@ Short explanation about the passed build flags
 -DDISABLE_DEPRECATED=ON: Disable deprecated code in the build.
 ```
 
-Some of these flags can be removed or turned off if you want to boost the compile time.
+Some of these flags can be removed or turned off if you want to boost the compile time. Checkout more configuration
+flags [here](https://github.com/qgis/QGIS/blob/master/INSTALL.md#371-available-compilation-flags). 
 
-The above series of commands can take a while to finish depending on how powerful the used PC.
+Overall the above series of commands can take a while to finish depending on how powerful the used PC, especially
+the build steps after the build is done, installation process using Ninja tool shouldn't take too long.
 
 ### 6. Run QGIS from the build
 After the build is successfully, run the compiled QGIS application from the container to verify 
@@ -396,7 +398,7 @@ there are several places where you can get help:
 - **QGIS GitHub Repository**: The [QGIS GitHub](https://github.com/qgis/qgis) is where all the development happens,
   and you can submit issues, pull requests, and more.
 
-## Conclusion
+## Final thoughts
 
 Using Docker to set up a QGIS development environment simplifies the process, especially for newcomers
 who may struggle with the dependency management required for compiling QGIS from source. 
