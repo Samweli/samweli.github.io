@@ -12,23 +12,28 @@ _QGIS with Docker image_
 ## QGIS Development using Docker
 
 In recent years, the [QGIS Development team](https://github.com/qgis/QGIS) has been building and sharing official 
-QGIS [Docker](https://www.docker.com) images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective,
+QGIS [Docker](https://www.docker.com) images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective and
 reusable approach to running and setting up QGIS and its components across a wide variety of use cases and environments.
-For this instance the Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
-of QGIS, creating robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
- installing/using multiple QGIS versions in an operating system (**a topic for another blog post**!!). 
+These Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
+of QGIS, create robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
+ install/use multiple QGIS versions in one operating system (**a topic for another blog post**!!). 
 
 
 In this post, I’m going to share the benefits of using Docker when setting up QGIS development, and provide
-a guide to becoming a QGIS contributor. I will touch on the normal way of setting up QGIS development
-and explain its pros and cons compared to the Docker-based approach. The whole QGIS development workflow is 
-a huge aspect containing various components, general practices and a number of tools, I'm not going to cover all of these here,
+a guide on how to start providing QGIS contributions. I will touch on the normal way of setting up QGIS development
+and explain its difference compared to the suggested Docker-based approach.
+
+The whole QGIS development workflow is 
+a huge ecosystem containing various components, general practices and a number of tools **similar to many other
+big open source projects**.
+I'm not going to cover all of these here,
 but I will address the high-level structure that anyone (even a beginner) can adopt and use for the development of core QGIS features.
 
 ## Compiling QGIS Desktop
 
-QGIS desktop core is mainly developed using C++, using the [Qt framework](https://www.qt.io/product/framework). The usual approach for compiling QGIS from source involves downloading and installing various dependencies
-and prerequisites for your operating system. Necessary build tools are needed to be manually configured and processed in order to
+QGIS desktop core is mainly developed using C++ and the [Qt framework](https://www.qt.io/product/framework). The usual approach for compiling QGIS from source involves
+downloading and installing various dependencies
+and tools for the operating system. Necessary build tools are needed to be manually configured and processed in order to
 compile QGIS from its source code.
 
 For example, on Ubuntu 22.04, you would need to install a list of dependencies such as:
@@ -48,17 +53,25 @@ This process involves not only installing the correct versions of all these pack
 potential conflicts between them. Additionally, maintaining these dependencies across different OS 
 versions can be problematic, leading to frequent setup issues and the need for manual troubleshooting.
 
-It would have been nice if the dependencies fetch could only feature a few set of commands, this would help
-especially the beginners to jumpstart the whole QGIS development setup and skip past all the issues that come with 
-build tools.
+On top of that in some environments, developers may need to manually compile, install libraries and 
+link them to QGIS by overriding the corresponding
+default settings in the QGIS configuration files. This can happen if the required libraries versions aren't 
+available via system packages — a challenging task that should be avoided, especially for new contributors.
 
-For more info about usual way of compiling QGIS [see](https://github.com/qgis/QGIS/blob/master/INSTALL.md) 
+It would have been nice if the dependencies fetch could only feature a few set of consistent steps, this would help
+the beginners to easily grasp the whole QGIS development setup workflow and skip past all the issues that come dealing 
+with build tools installation.
+
+For more info about QGIS compilation [see](https://github.com/qgis/QGIS/blob/master/INSTALL.md). 
 
 ## Why use Docker?
 
 The Docker approach makes it easier to set up a QGIS development environment, avoiding the challenges and
 time-consuming tasks involved with manually installing all the required dependencies and configuring the system.
 Developers only need to know how to use Docker in order to use the setup, no other extra skills are needed.
+
+The main goal is to set up a workflow that intends to serve as a single, consistent process 
+that operates reliably across all environments.
 
 ## Benefits
 
@@ -101,7 +114,7 @@ hours troubleshooting setup issues.
 
 ## Docker in action
 
-Now that we have covered the rationale behind using Docker for setting up QGIS development and its general 
+Now that we have seen the rationale behind using Docker for setting up QGIS development and its general 
 benefits, lets take a look 
 at the actual work and the required steps to set Docker and spin up QGIS from it.
 
@@ -131,13 +144,13 @@ git clone git@github.com:qgis/QGIS.git
 
 After cloning is complete, you can switch to any QGIS released version branch or stay with the master. 
 
-I recommend to select a released version branch and check it out because the included changes in the 
+I recommend to select a released version branch or a final release tag and check it out because the included changes in the 
 release branches tend to be more stable compared to the master branch changes.
 
 See all QGIS repository branches - https://github.com/qgis/QGIS/branches
 
 ### 2. Create Docker compose configuration
-Change directory, and get inside the QGIS root folder
+After cloning the repository, change directory and get inside the QGIS root folder
 
 ```bash
 
@@ -228,7 +241,7 @@ This will build QGIS from source with specific configuration options like enabli
 At the time of writing this post the used QGIS docker image had one issue in linking the QScintilla2 library.
 The following commands makes sure that the library symlinks are created in the folder that QGIS expects them to be.
 
-This should not be the usual way of doing this, once the upstream image is fixed this step will not be needed anymore.
+**Note:** This should not be the usual way of doing this, once the upstream image is fixed this step will not be needed anymore.
 
 
 ```bash
@@ -288,7 +301,7 @@ Git in the build.
     
 
 ```
-Outline for the passed CMake build flags.
+The passed CMake build flags and their meaning.
 
 ```yml
 
@@ -307,17 +320,18 @@ Outline for the passed CMake build flags.
 -DDISABLE_DEPRECATED=ON: Disable deprecated code in the build.
 ```
 
-Some of these flags can be removed or turned off if you want to boost the compile time. Checkout more configuration
+Some of these flags can be removed or turned off if you want to boost the compile time or
+if you don't want certain features in the final compiled QGIS. Checkout more configuration
 flags [here](https://github.com/qgis/QGIS/blob/master/INSTALL.md#371-available-compilation-flags). 
 
-Overall the above series of commands can take a while to finish depending on how powerful the used PC, especially
-the build steps after the build is done, installation process using Ninja tool shouldn't take too long.
+Overall the above series of commands can take a while to finish depending on how powerful the used PC, 
+after the build is done, installation process using Ninja shouldn't take too long.
 
 ### 6. Run QGIS from the build
 After the build is successfully, run the compiled QGIS application from the container to verify 
 the installation and open the compiled QGIS application.
 
-Using the xhost command setup the Desktop for allowing the Docker tool to control access to the X11 display
+Use the xhost command to allow the Docker container to control access to the X11 display
 and enabling using the built QGIS binary `qgis` from inside the container to launch the application.
 
 ```bash
@@ -332,15 +346,15 @@ docker compose run qgis-dev-live bash -c "./output/bin/qgis"
 
 After running the above commands, hopefully the QGIS desktop application should start! 
 
-For those using Linux distros there is a [Jupyter notebook](https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb) 
-that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
-in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don't want to run commands in terminal.
-
 
 
 ### Notes and troubleshooting
 Be aware that the build process may take significant time depending on your system's resources. 
 If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.
+
+There is a [Jupyter notebook](https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb) 
+that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
+in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don't want to run commands in terminal.
 
 
 
@@ -365,7 +379,7 @@ Contributing to the QGIS is a great way to support the open-source community and
 in the world.
 
 The QGIS team welcomes any contribution from anywhere. QGIS itself is a team work consisting of different people from all 
-over the world, any addition, edit or improvement in the code, documentation or corresponding QGIS project would be 
+over the world, any addition, edit or improvement in the code, documentation or any other QGIS project part would be 
 heavily appreciated.
 
 
@@ -380,7 +394,7 @@ Before starting contributing to the QGIS source here are some of important thing
 - Documentation on new changes; The code, commit and changes details should be descriptive enough to provide enough information about the 
   proposed work.
 
-Finally don't stress out, go ahead and make the pull request! Contributions don't have to be perfect and reviewers are 
+Finally, don't stress out, go ahead and make the pull request! Contributions don't have to be perfect and reviewers are 
 always there to improve the new changes.
 
 
@@ -390,7 +404,7 @@ For the full guide on QGIS development see the developers guideline found [here]
 
 ## Reach out
 
-If you have questions about using Docker for QGIS development or contributing to QGIS,
+If you have questions about using Docker for QGIS development or general questions about contributing to QGIS,
 there are several places where you can get help:
 
 - **QGIS Developer Mailing List**: The [QGIS Developer Mailing List](https://lists.osgeo.org/mailman/listinfo/qgis-developer)
@@ -405,5 +419,8 @@ who may struggle with the dependency management required for compiling QGIS from
 With Docker, you can create a consistent, reproducible environment for QGIS development 
 that works across platforms and makes contributing to the QGIS project easier than ever.
 
+
+Stay tuned — next, I’ll be sharing how to set up your daily development workflow,
+including recompiling QGIS after making new changes while using Docker, debugging and testing locally!
 
 
