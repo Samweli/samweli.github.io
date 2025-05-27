@@ -2,7 +2,7 @@
 layout: single
 comments: true
 title: Streamlining QGIS Development using Docker
-published: false
+published: true
 ---
 
 ![](../assets/images/qgis_in_docker.png)
