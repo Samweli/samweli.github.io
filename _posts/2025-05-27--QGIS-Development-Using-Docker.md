@@ -5,11 +5,8 @@ title: Streamlining QGIS Development using Docker
 published: true
 ---
 
+
 ![](../assets/images/qgis_in_docker.png)
-
-_QGIS with Docker image_
-
-## QGIS Development using Docker
 
 In recent years, the [QGIS Development team](https://github.com/qgis/QGIS) has been building and sharing official 
 QGIS [Docker](https://www.docker.com) images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective and
@@ -138,7 +135,6 @@ QGIS official repository can be accessed from [here](https://github.com/qgis/QGI
 what version to work on by checking out the corresponding QGIS version git tag.
 
 ```bash
-
 git clone git@github.com:qgis/QGIS.git
 ```
 
@@ -147,13 +143,12 @@ After cloning is complete, you can switch to any QGIS released version branch or
 I recommend to select a released version branch or a final release tag and check it out because the included changes in the 
 release branches tend to be more stable compared to the master branch changes.
 
-See all QGIS repository branches - https://github.com/qgis/QGIS/branches
+See all QGIS repository branches [here](https://github.com/qgis/QGIS/branches).
 
 ### 2. Create Docker compose configuration
 After cloning the repository, change directory and get inside the QGIS root folder
 
 ```bash
-
  cd QGIS
 ```
 Create a `docker-compose.yml` file that defines the necessary services and environment. 
@@ -163,8 +158,6 @@ The `docker-compose.yml` file should contain the below structure and content. Th
 be located in the root of the QGIS directory.
 
 ```bash
-
-
 services:
   qgis-dev-live:
     image: qgis/qgis3-build-deps-22.04-qt5:latest
@@ -199,19 +192,16 @@ this [page](https://www.docker.com/get-started/) on how to install the essential
 Use the following commands to run the build and start the Docker container.
 
 ```bash
-
 docker compose build qgis-dev-live
 ```
 
 ```bash
-
 docker compose up 
 ```
 
 If the above commands are successful, the following content will be displayed in the terminal.
 
-```commandline
-
+```bash
 [+] Running 1/1
  ✔ Container qgis-qgis-dev-live-1  Started 
 
@@ -228,7 +218,6 @@ to manage the build process.
 Command to start interactive bash shell
 
 ```bash
-
 docker compose exec -it qgis-dev-live bash
 
 ```
@@ -245,7 +234,6 @@ The following commands makes sure that the library symlinks are created in the f
 
 
 ```bash
-
 docker compose run qgis-dev-live bash -c "\
   mkdir -p /usr/lib/x86_64-linux-gnu && \
   echo 'Checking for QScintilla2 libraries...' && \
@@ -265,7 +253,7 @@ docker compose run qgis-dev-live bash -c "\
 "
 ````
 
-Now after fixing the library symlinks, we will now head over to the main part of the QGIS compilation.
+After fixing the library symlinks, we will now head over to the main part of the QGIS compilation.
 In this step we will configure, build and install QGIS using [CMake](https://cmake.org/)(a meta build tool) and
 [Ninja](https://github.com/ninja-build/ninja) (build tool).
 
@@ -274,7 +262,6 @@ Git in the build.
 
 
 ```bash
-
   docker compose run qgis-dev-live bash -c "\
     echo '[$(date)] Starting CMake configuration...' && \
     cmake ../QGIS -GNinja \
@@ -304,7 +291,6 @@ Git in the build.
 The passed CMake build flags and their meaning.
 
 ```yml
-
 -GNinja: Use Ninja as the build system..
 -DWITH_STAGED_PLUGINS=ON: Enable staged QGIS plugins(plugins that comes with QGIS).
 -DCMAKE_INSTALL_PREFIX=/usr: Set installation path to /usr.
@@ -335,12 +321,10 @@ Use the xhost command to allow the Docker container to control access to the X11
 and enabling using the built QGIS binary `qgis` from inside the container to launch the application.
 
 ```bash
-
 xhost +local:docker
 ```
 
 ```bash
-
 docker compose run qgis-dev-live bash -c "./output/bin/qgis"
 ```
 

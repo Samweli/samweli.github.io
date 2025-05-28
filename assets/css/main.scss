@@ -7,3 +7,38 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.copy-code-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: #fff; // white icon for dark background
+    transition: fill 0.2s ease;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &:hover svg {
+    fill: #ccc; // optional: lighter on hover
+  }
+}
+
+.copy-code-button img.copy-icon {
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(0) invert(1); // make it white on dark background
+}
+.copy-code-button:hover img.copy-icon {
+  filter: brightness(0) invert(0.7); // lighter on hover
+}
