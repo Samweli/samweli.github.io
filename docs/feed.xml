@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-05-28T00:03:53+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Embracing and exploring tech world</title><subtitle>Observing life from a software perspective.</subtitle><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><entry><title type="html">Streamlining QGIS Development using Docker</title><link href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/" rel="alternate" type="text/html" title="Streamlining QGIS Development using Docker" /><published>2025-05-27T00:00:00+00:00</published><updated>2025-05-27T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-QGIS-Development-Using-Docker</id><content type="html" xml:base="http://0.0.0.0:4000/QGIS-Development-Using-Docker/"><![CDATA[<p><img src="../assets/images/qgis_in_docker.png" alt="" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-05-28T00:15:23+00:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Embracing and exploring tech world</title><subtitle>Observing life from a software perspective.</subtitle><author><name>Samweli Mwakisambwe</name><email>smwltwesa6@gmail.com</email></author><entry><title type="html">Streamlining QGIS Development using Docker</title><link href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/" rel="alternate" type="text/html" title="Streamlining QGIS Development using Docker" /><published>2025-05-27T00:00:00+00:00</published><updated>2025-05-27T00:00:00+00:00</updated><id>http://0.0.0.0:4000/-QGIS-Development-Using-Docker</id><content type="html" xml:base="http://0.0.0.0:4000/QGIS-Development-Using-Docker/"><![CDATA[<p><img src="../assets/images/qgis_in_docker.png" alt="" /></p>
 
 <p>In recent years, the <a href="https://github.com/qgis/QGIS">QGIS Development team</a> has been building and sharing official 
-QGIS <a href="https://www.docker.com">Docker</a> images via the <a href="https://hub.docker.com/r/qgis/qgis">QGIS Docker Hub</a> . This work has provided an effective and
+QGIS <a href="https://www.docker.com">Docker</a> images via the <a href="https://hub.docker.com/r/qgis/qgis">QGIS Docker Hub</a>. This work has provided an effective and
 reusable approach to running and setting up QGIS and its components across a wide variety of use cases and environments.
 These Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
 of QGIS, create robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
@@ -12,10 +12,11 @@ a guide on how to start providing QGIS contributions. I will touch on the normal
 and explain its difference compared to the suggested Docker-based approach.</p>
 
 <p>The whole QGIS development workflow is 
-a huge ecosystem containing various components, general practices and a number of tools <strong>similar to many other
+a huge ecosystem containing various components, general practices and a number of tools. This is quite <strong>similar to many other
 big open source projects</strong>.
 I’m not going to cover all of these here,
-but I will address the high-level structure that anyone (even a beginner) can adopt and use for the development of core QGIS features.</p>
+but I will address the high-level structure that anyone (even a beginner) can adopt and use for the development of core QGIS features.
+Lastly I will highlight few points to take into consideration when planning to contribute to the QGIS project.</p>
 
 <h2 id="compiling-qgis-desktop">Compiling QGIS Desktop</h2>
 
@@ -308,14 +309,6 @@ and enabling using the built QGIS binary <code class="language-plaintext highlig
 
 <p>After running the above commands, hopefully the QGIS desktop application should start!</p>
 
-<h3 id="notes-and-troubleshooting">Notes and troubleshooting</h3>
-<p>Be aware that the build process may take significant time depending on your system’s resources. 
-If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.</p>
-
-<p>There is a <a href="https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb">Jupyter notebook</a> 
-that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
-in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don’t want to run commands in terminal.</p>
-
 <h2 id="more-benefits">More benefits</h2>
 
 <p>Overall the availability of the QGIS Docker images brings other several compelling use cases apart for simplifying the development, 
@@ -357,6 +350,14 @@ proposed work.</li>
 always there to improve the new changes.</p>
 
 <p>For the full guide on QGIS development see the developers guideline found <a href="https://docs.qgis.org/3.40/en/docs/developers_guide">here</a>.</p>
+
+<h3 id="notes-and-troubleshooting">Notes and troubleshooting</h3>
+<p>Be aware that the build process may take significant time depending on your system’s resources. 
+If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.</p>
+
+<p>There is a <a href="https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb">Jupyter notebook</a> 
+that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
+in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don’t want to run commands in terminal.</p>
 
 <h2 id="reach-out">Reach out</h2>
 
