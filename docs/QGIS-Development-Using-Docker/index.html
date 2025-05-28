@@ -1,0 +1,1004 @@
+<!doctype html>
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Streamlining QGIS Development using Docker - Embracing and exploring tech world</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Samweli Mwakisambwe">
+  
+  <meta property="article:author" content="Samweli Mwakisambwe">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Embracing and exploring tech world">
+<meta property="og:title" content="Streamlining QGIS Development using Docker">
+<meta property="og:url" content="http://0.0.0.0:4000/QGIS-Development-Using-Docker/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-05-27T00:00:00+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Samweli Mwakisambwe",
+      "url": "http://0.0.0.0:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Embracing and exploring tech world Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!--<script src="/assets/js/copy_button.js"></script>-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Embracing and exploring tech world
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/software/">Software</a>
+            </li><li class="masthead__menu-item">
+              <a href="/maps/">Maps</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/contact/">Contact</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://0.0.0.0:4000/">
+        <img src="/assets/images/author.jpg" alt="Samweli Mwakisambwe" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://0.0.0.0:4000/" itemprop="url">Samweli Mwakisambwe</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Tech, Software, Data, Maps</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Tanzania, Africa</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+            <li><a href="http://x.com/SamweliTwesa" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+        
+          
+            <li><a href="http://github.com/Samweli" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:smwltwesa6@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="smwltwesa6@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Streamlining QGIS Development using Docker">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2025-05-27T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://0.0.0.0:4000/QGIS-Development-Using-Docker/" class="u-url" itemprop="url">Streamlining QGIS Development using Docker
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p><img src="../assets/images/qgis_in_docker.png" alt="" /></p>
+
+<p>In recent years, the <a href="https://github.com/qgis/QGIS">QGIS Development team</a> has been building and sharing official 
+QGIS <a href="https://www.docker.com">Docker</a> images via the <a href="https://hub.docker.com/r/qgis/qgis">QGIS Docker Hub</a>. This work has provided an effective and
+reusable approach to running and setting up QGIS and its components across a wide variety of use cases and environments.
+These Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
+of QGIS, create robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
+ install/use multiple QGIS versions in one operating system (<strong>a topic for another blog post</strong>!!).</p>
+
+<p>In this post, I’m going to share the benefits of using Docker when setting up QGIS development, and provide
+a guide on how to start providing QGIS contributions. I will touch on the normal way of setting up QGIS development
+and explain its difference compared to the suggested Docker-based approach.</p>
+
+<p>The whole QGIS development workflow is 
+a huge ecosystem containing various components, general practices and a number of tools. This is quite <strong>similar to many other
+big open source projects</strong>.
+I’m not going to cover all of these here,
+but I will address the high-level structure that anyone (even a beginner) can adopt and use for the development of core QGIS features.
+Lastly I will highlight few points to take into consideration when planning to contribute to the QGIS project.</p>
+
+<h2 id="compiling-qgis-desktop">Compiling QGIS Desktop</h2>
+
+<p>QGIS desktop core is mainly developed using C++ and the <a href="https://www.qt.io/product/framework">Qt framework</a>. The usual approach for compiling QGIS from source involves
+downloading and installing various dependencies
+and tools for the operating system. Necessary build tools are needed to be manually configured and processed in order to
+compile QGIS from its source code.</p>
+
+<p>For example, on Ubuntu 22.04, you would need to install a list of dependencies such as:</p>
+
+<ul>
+  <li><strong>Build Tools</strong>: <code class="language-plaintext highlighter-rouge">bison</code>, <code class="language-plaintext highlighter-rouge">build-essential</code>, <code class="language-plaintext highlighter-rouge">cmake</code>, <code class="language-plaintext highlighter-rouge">ccache</code>, <code class="language-plaintext highlighter-rouge">flex</code></li>
+  <li><strong>Geospatial Libraries</strong>: <code class="language-plaintext highlighter-rouge">libgdal-dev</code>, <code class="language-plaintext highlighter-rouge">libgeos-dev</code>, <code class="language-plaintext highlighter-rouge">libproj-dev</code>, <code class="language-plaintext highlighter-rouge">libpq-dev</code></li>
+  <li><strong>Qt and PyQt5</strong>: <code class="language-plaintext highlighter-rouge">libqt5opengl5-dev</code>, <code class="language-plaintext highlighter-rouge">libqt5serialport5-dev</code>, <code class="language-plaintext highlighter-rouge">python3-pyqt5</code></li>
+  <li><strong>Python Dependencies</strong>: <code class="language-plaintext highlighter-rouge">python3-dev</code>, <code class="language-plaintext highlighter-rouge">python3-gdal</code>, <code class="language-plaintext highlighter-rouge">python3-lxml</code>, <code class="language-plaintext highlighter-rouge">python3-psycopg2</code></li>
+  <li><strong>Additional Dependencies</strong>: <code class="language-plaintext highlighter-rouge">doxygen</code>, <code class="language-plaintext highlighter-rouge">graphviz</code>, <code class="language-plaintext highlighter-rouge">protobuf-compiler</code>, <code class="language-plaintext highlighter-rouge">libspatialindex-dev</code>, <code class="language-plaintext highlighter-rouge">qtbase5-dev</code></li>
+</ul>
+
+<div align="center">
+  <img alt="a gif showing a long list of items" src="../assets/images/long_list.webp" />
+  <p align="center">Long list ehh!!</p>
+</div>
+
+<p>This process involves not only installing the correct versions of all these packages but also managing 
+potential conflicts between them. Additionally, maintaining these dependencies across different OS 
+versions can be problematic, leading to frequent setup issues and the need for manual troubleshooting.</p>
+
+<p>On top of that in some environments, developers may need to manually compile, install libraries and 
+link them to QGIS by overriding the corresponding
+default settings in the QGIS configuration files. This can happen if the required libraries versions aren’t 
+available via system packages — a challenging task that should be avoided, especially for new contributors.</p>
+
+<p>It would have been nice if the dependencies fetch could only feature a few set of consistent steps, this would help
+the beginners to easily grasp the whole QGIS development setup workflow and skip past all the issues that come dealing 
+with build tools installation.</p>
+
+<p>For more info about QGIS compilation <a href="https://github.com/qgis/QGIS/blob/master/INSTALL.md">see</a>.</p>
+
+<h2 id="why-use-docker">Why use Docker?</h2>
+
+<p>The Docker approach makes it easier to set up a QGIS development environment, avoiding the challenges and
+time-consuming tasks involved with manually installing all the required dependencies and configuring the system.
+Developers only need to know how to use Docker in order to use the setup, no other extra skills are needed.</p>
+
+<p>The main goal is to set up a workflow that intends to serve as a single, consistent process 
+that operates reliably across all environments.</p>
+
+<h2 id="benefits">Benefits</h2>
+
+<p>With Docker, the complexity of setting up a QGIS development environment is drastically reduced. 
+Docker containers allow you to package everything needed to run QGIS, including its dependencies, 
+into a single environment. Here are some key benefits of using Docker for QGIS development:</p>
+
+<h4 id="easy-setup">Easy setup</h4>
+<p>Docker enables a “create once, run anywhere” approach. All the dependencies required to compile 
+QGIS are bundled into the Docker image, huge thanks to QGIS development team for making this possible,
+this simplifies the whole process of dependencies fetching QGIS development without
+worrying about compatibility or dependency issues.</p>
+
+<p>The only thing you need to run a Docker container
+is Docker itself, which is available on most platforms.</p>
+
+<h4 id="platform-independence">Platform independence</h4>
+<p>One of Docker’s greatest advantages is that it abstracts away the underlying operating system. 
+Whether you’re using Linux, macOS, or Windows, Docker ensures that the QGIS development environment
+will be the same across all platforms. Eliminating the need to configure each OS individually and 
+ensures consistency. The main reason for this is that some operating systems doesn’t support directly installation
+of some QGIS dependencies hence not ensuring a standard one for all development configurations.</p>
+
+<h4 id="reproducibility">Reproducibility</h4>
+<p>Docker images ensure that you can share your development environment with others, making it easier for
+collaborators or new contributors to get started. This reproducibility is essential in open-source projects like
+QGIS, where contributors may come from a variety of environments. The docker environment setup specifically for this 
+case includes a configuration file <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> that can be shared with the target QGIS repository tag/branch
+/commit and that should be enough to make it work in any other environment given the needed Docker images 
+are available.</p>
+
+<h4 id="headless-and-isolated-environment">Headless and isolated environment</h4>
+<p>Docker allows you to run QGIS in a headless, isolated environment, which is ideal for continuous integration,
+automated testing, and in environments where you don’t have graphical interface unit.</p>
+
+<h4 id="simplified-compilation">Simplified compilation</h4>
+<p>Instead of manually managing and installing dependencies, the Docker image for QGIS comes 
+pre-configured with everything you need. This allows you to focus on development rather than spending
+hours troubleshooting setup issues.</p>
+
+<h2 id="docker-in-action">Docker in action</h2>
+
+<p>Now that we have seen the rationale behind using Docker for setting up QGIS development and its general 
+benefits, lets take a look 
+at the actual work and the required steps to set Docker and spin up QGIS from it.</p>
+
+<div align="center">
+  <img alt="a gif showing a team about to work" src="../assets/images/lets_do_this.gif" />
+</div>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Running on a Linux environment, ensure that Docker,
+Docker Compose and <a href="https://git-scm.com/">Git</a>, 
+are installed and running on your system.
+These tools are necessary to set up the QGIS development environment using Docker.
+Make sure to install the latest version of Docker Compose by following installation instructions from 
+<a href="https://docs.docker.com/compose/install/linux">here</a>.</p>
+
+<h3 id="1-clone-qgis-repository">1. Clone QGIS repository</h3>
+<p>Clone the QGIS repository from GitHub to get the source code for building QGIS. 
+This will provide you with the latest source code to configure and compile the application. 
+QGIS official repository can be accessed from <a href="https://github.com/qgis/QGIS">here</a>. Users can select
+what version to work on by checking out the corresponding QGIS version git tag.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:qgis/QGIS.git
+</code></pre></div></div>
+
+<p>After cloning is complete, you can switch to any QGIS released version branch or stay with the master.</p>
+
+<p>I recommend to select a released version branch or a final release tag and check it out because the included changes in the 
+release branches tend to be more stable compared to the master branch changes.</p>
+
+<p>See all QGIS repository branches <a href="https://github.com/qgis/QGIS/branches">here</a>.</p>
+
+<h3 id="2-create-docker-compose-configuration">2. Create Docker compose configuration</h3>
+<p>After cloning the repository, change directory and get inside the QGIS root folder</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>QGIS
+</code></pre></div></div>
+<p>Create a <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file that defines the necessary services and environment. 
+The file will include settings for the QGIS build dependencies and X11 forwarding for GUI applications.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file should contain the below structure and content. This file should
+be located in the root of the QGIS directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>services:
+  qgis-dev-live:
+    image: qgis/qgis3-build-deps-22.04-qt5:latest
+    volumes:
+      - ..:/src/QGIS
+      - build:/src/QGIS/build
+    environment:
+      - <span class="nv">DISPLAY</span><span class="o">=</span><span class="k">${</span><span class="nv">DISPLAY</span><span class="k">}</span>
+      - <span class="nv">XAUTHORITY</span><span class="o">=</span><span class="k">${</span><span class="nv">XAUTHORITY</span><span class="k">}</span>
+      - <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span>/tmp
+    network_mode: host
+    working_dir: /src/QGIS/build
+    <span class="nb">command</span>: <span class="nb">tail</span> <span class="nt">-f</span> /dev/null
+
+volumes:
+  build:
+</code></pre></div></div>
+
+<p>Where <code class="language-plaintext highlighter-rouge">qgis/qgis3-build-deps-22.04-qt5:latest</code> is the image responsible for all the QGIS development dependencies and
+recommended for use, other images can be fetched from here https://hub.docker.com/u/qgis?page=1&amp;search=build-deps.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">volumes</code> part contain information of where to mount and link the QGIS source and the build directory, while the <code class="language-plaintext highlighter-rouge">environment</code>
+section defines all the necessary variable required to enable display configuration between the host and the Docker containers.</p>
+
+<h3 id="3-build-the-docker-environment">3. Build the Docker environment</h3>
+<p>Use Docker Compose to build the development environment based on the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> configuration.
+This will download the necessary Docker image with all build dependencies and set up the environment for compiling QGIS.</p>
+
+<p>In this step we assume all the Docker tools have already been installed in the system, if not see
+this <a href="https://www.docker.com/get-started/">page</a> on how to install the essential Docker tools.</p>
+
+<p>Use the following commands to run the build and start the Docker container.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose build qgis-dev-live
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up 
+</code></pre></div></div>
+
+<p>If the above commands are successful, the following content will be displayed in the terminal.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>+] Running 1/1
+ ✔ Container qgis-qgis-dev-live-1  Started 
+
+</code></pre></div></div>
+
+<h3 id="4-start-the-development-environment">4. Start the development environment</h3>
+<p>Configuring and build the QGIS source can be done by passing build commands directly
+in Docker exec command or via an interactive bash shell.</p>
+
+<p>For the latter option, in order launch the Docker container with an interactive bash shell to begin development. 
+Use the below command, this will provide you with a command-line interface inside the container 
+to manage the build process.</p>
+
+<p>Command to start interactive bash shell</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose <span class="nb">exec</span> <span class="nt">-it</span> qgis-dev-live bash
+
+</code></pre></div></div>
+
+<h3 id="5-configure-and-build-qgis">5. Configure and build QGIS</h3>
+<p>Run CMake and Ninja commands inside the container to configure and compile QGIS. 
+This will build QGIS from source with specific configuration options like enabling plugins and
+<a href="https://grass.osgeo.org/">GRASS</a> integration.</p>
+
+<p>At the time of writing this post the used QGIS docker image had one issue in linking the QScintilla2 library.
+The following commands makes sure that the library symlinks are created in the folder that QGIS expects them to be.</p>
+
+<p><strong>Note:</strong> This should not be the usual way of doing this, once the upstream image is fixed this step will not be needed anymore.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run qgis-dev-live bash <span class="nt">-c</span> <span class="s2">"</span><span class="se">\</span><span class="s2">
+  mkdir -p /usr/lib/x86_64-linux-gnu &amp;&amp; </span><span class="se">\</span><span class="s2">
+  echo 'Checking for QScintilla2 libraries...' &amp;&amp; </span><span class="se">\</span><span class="s2">
+  if [ -f /usr/lib/libqscintilla2_qt5.so ]; then </span><span class="se">\</span><span class="s2">
+    echo 'Found QScintilla2 libraries in /usr/lib - creating symlinks...' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    ln -sf /usr/lib/libqscintilla2_qt5.so /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so &amp;&amp; </span><span class="se">\</span><span class="s2">
+    [ -f /usr/lib/libqscintilla2_qt5.so.15 ] &amp;&amp; ln -sf /usr/lib/libqscintilla2_qt5.so.15 /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so.15 &amp;&amp; </span><span class="se">\</span><span class="s2">
+    [ -f /usr/lib/libqscintilla2_qt5.so.15.0 ] &amp;&amp; ln -sf /usr/lib/libqscintilla2_qt5.so.15.0 /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so.15.0 &amp;&amp; </span><span class="se">\</span><span class="s2">
+    [ -f /usr/lib/libqscintilla2_qt5.so.15.0.0 ] &amp;&amp; ln -sf /usr/lib/libqscintilla2_qt5.so.15.0.0 /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so.15.0.0 &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo 'Created QScintilla2 symlinks' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    ls -la /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so*; </span><span class="se">\</span><span class="s2">
+  else </span><span class="se">\</span><span class="s2">
+    echo 'QScintilla2 libraries not found in /usr/lib' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo 'Checking existing libraries in /usr/lib/x86_64-linux-gnu...' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    ls -la /usr/lib/x86_64-linux-gnu/libqscintilla2_qt5.so* || echo 'No QScintilla2 libraries found'; </span><span class="se">\</span><span class="s2">
+  fi
+"</span>
+</code></pre></div></div>
+
+<p>After fixing the library symlinks, we will now head over to the main part of the QGIS compilation.
+In this step we will configure, build and install QGIS using <a href="https://cmake.org/">CMake</a>(a meta build tool) and
+<a href="https://github.com/ninja-build/ninja">Ninja</a> (build tool).</p>
+
+<p>The commands also mark the Git directory as safe globally, in order to avoid trust warnings when using
+Git in the build.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker compose run qgis-dev-live bash <span class="nt">-c</span> <span class="s2">"</span><span class="se">\</span><span class="s2">
+    echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] Starting CMake configuration...' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    cmake ../QGIS -GNinja </span><span class="se">\</span><span class="s2">
+        -DWITH_STAGED_PLUGINS=ON </span><span class="se">\</span><span class="s2">
+        -DCMAKE_INSTALL_PREFIX=/usr </span><span class="se">\</span><span class="s2">
+        -DWITH_GRASS=ON </span><span class="se">\</span><span class="s2">
+        -DSUPPRESS_QT_WARNINGS=ON </span><span class="se">\</span><span class="s2">
+        -DENABLE_TESTS=OFF </span><span class="se">\</span><span class="s2">
+        -DWITH_QSPATIALITE=ON </span><span class="se">\</span><span class="s2">
+        -DWITH_QWTPOLAR=OFF </span><span class="se">\</span><span class="s2">
+        -DWITH_APIDOC=OFF </span><span class="se">\</span><span class="s2">
+        -DWITH_ASTYLE=OFF </span><span class="se">\</span><span class="s2">
+        -DWITH_DESKTOP=ON </span><span class="se">\</span><span class="s2">
+        -DWITH_BINDINGS=ON </span><span class="se">\</span><span class="s2">
+        -DDISABLE_DEPRECATED=ON &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] CMake configuration completed.' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    git config --global --add safe.directory /src/QGIS/QGIS &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] Starting QGIS build...' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    VERBOSE=1 ninja -v &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] QGIS build completed.' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] Starting QGIS installation...' &amp;&amp; </span><span class="se">\</span><span class="s2">
+    VERBOSE=1 ninja -v install &amp;&amp; </span><span class="se">\</span><span class="s2">
+    echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] Installation completed.'"</span>
+    
+
+</code></pre></div></div>
+<p>The passed CMake build flags and their meaning.</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">-GNinja</span><span class="pi">:</span> <span class="s">Use Ninja as the build system..</span>
+<span class="na">-DWITH_STAGED_PLUGINS=ON</span><span class="pi">:</span> <span class="s">Enable staged QGIS plugins(plugins that comes with QGIS).</span>
+<span class="na">-DCMAKE_INSTALL_PREFIX=/usr</span><span class="pi">:</span> <span class="s">Set installation path to /usr.</span>
+<span class="na">-DWITH_GRASS=ON</span><span class="pi">:</span> <span class="s">Enable GRASS GIS integration.</span>
+<span class="na">-DSUPPRESS_QT_WARNINGS=ON</span><span class="pi">:</span> <span class="s">Hide Qt deprecation warnings.</span>
+<span class="na">-DENABLE_TESTS=OFF</span><span class="pi">:</span> <span class="s">Skip building test code.</span>
+<span class="na">-DWITH_QSPATIALITE=ON</span><span class="pi">:</span> <span class="s">Enable support for SpatiaLite.</span>
+<span class="na">-DWITH_QWTPOLAR=OFF</span><span class="pi">:</span> <span class="s">Disable QwtPolar support (not needed).</span>
+<span class="na">-DWITH_APIDOC=OFF</span><span class="pi">:</span> <span class="s">Disable API documentation generation.</span>
+<span class="na">-DWITH_ASTYLE=OFF</span><span class="pi">:</span> <span class="s">Skip AStyle code formatting check.</span>
+<span class="na">-DWITH_DESKTOP=ON</span><span class="pi">:</span> <span class="s">Build the desktop QGIS application.</span>
+<span class="na">-DWITH_BINDINGS=ON</span><span class="pi">:</span> <span class="s">Build Python bindings.</span>
+<span class="na">-DDISABLE_DEPRECATED=ON</span><span class="pi">:</span> <span class="s">Disable deprecated code in the build.</span>
+</code></pre></div></div>
+
+<p>Some of these flags can be removed or turned off if you want to boost the compile time or
+if you don’t want certain features in the final compiled QGIS. Checkout more configuration
+flags <a href="https://github.com/qgis/QGIS/blob/master/INSTALL.md#371-available-compilation-flags">here</a>.</p>
+
+<p>Overall the above series of commands can take a while to finish depending on how powerful the used PC, 
+after the build is done, installation process using Ninja shouldn’t take too long.</p>
+
+<h3 id="6-run-qgis-from-the-build">6. Run QGIS from the build</h3>
+<p>After the build is successfully, run the compiled QGIS application from the container to verify 
+the installation and open the compiled QGIS application.</p>
+
+<p>Use the xhost command to allow the Docker container to control access to the X11 display
+and enabling using the built QGIS binary <code class="language-plaintext highlighter-rouge">qgis</code> from inside the container to launch the application.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xhost +local:docker
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run qgis-dev-live bash <span class="nt">-c</span> <span class="s2">"./output/bin/qgis"</span>
+</code></pre></div></div>
+
+<p>After running the above commands, hopefully the QGIS desktop application should start!</p>
+
+<h2 id="more-benefits">More benefits</h2>
+
+<p>Overall the availability of the QGIS Docker images brings other several compelling use cases apart for simplifying the development, 
+here are some examples:</p>
+
+<h4 id="running-unreleased-versions">Running unreleased versions</h4>
+<p>Docker images allow you to easily run nightly builds or versions from the master branch of QGIS.
+This is especially useful for testing new features or bug fixes that have not yet been officially released 
+or for running QGIS in a server environment without a GUI.</p>
+
+<h4 id="legacy-qgis-versions">Legacy QGIS versions</h4>
+<p>If you need to support older versions of QGIS in an operating system that only allows the latest versions,
+Docker can help by creating isolated environments where specific versions of QGIS can run independently of
+the system’s package manager.</p>
+
+<h2 id="contributing-to-qgis">Contributing to QGIS</h2>
+
+<p>Contributing to the QGIS is a great way to support the open-source community and improve one of the important GIS tools used
+in the world.</p>
+
+<p>The QGIS team welcomes any contribution from anywhere. QGIS itself is a team work consisting of different people from all 
+over the world, any addition, edit or improvement in the code, documentation or any other QGIS project part would be 
+heavily appreciated.</p>
+
+<p>Before starting contributing to the QGIS source here are some of important things go over first:</p>
+
+<ul>
+  <li>Familiarize with C++ and <a href="https://www.qt.io/product/framework">Qt framework</a>;</li>
+  <li>Review the QGIS coding standards; This will help in making sure reviewers can provide right feedback and 
+the suggested changes are easily reviewable.</li>
+  <li>Create or find issue related to the problem; Tracking discussions will provide context for the target contribution.</li>
+  <li>Run tests locally; It won’t look good if reviewers find minor bugs when reviewing new changes. Always make sure to catch regressions and 
+new changes bugs that can be detected early by running unit tests.</li>
+  <li>Documentation on new changes; The code, commit and changes details should be descriptive enough to provide enough information about the 
+proposed work.</li>
+</ul>
+
+<p>Finally, don’t stress out, go ahead and make the pull request! Contributions don’t have to be perfect and reviewers are 
+always there to improve the new changes.</p>
+
+<p>For the full guide on QGIS development see the developers guideline found <a href="https://docs.qgis.org/3.40/en/docs/developers_guide">here</a>.</p>
+
+<h3 id="notes-and-troubleshooting">Notes and troubleshooting</h3>
+<p>Be aware that the build process may take significant time depending on your system’s resources. 
+If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.</p>
+
+<p>There is a <a href="https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb">Jupyter notebook</a> 
+that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
+in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don’t want to run commands in terminal.</p>
+
+<h2 id="reach-out">Reach out</h2>
+
+<p>If you have questions about using Docker for QGIS development or general questions about contributing to QGIS,
+there are several places where you can get help:</p>
+
+<ul>
+  <li><strong>QGIS Developer Mailing List</strong>: The <a href="https://lists.osgeo.org/mailman/listinfo/qgis-developer">QGIS Developer Mailing List</a>
+is a great place to ask questions and discuss development-related topics.</li>
+  <li><strong>QGIS GitHub Repository</strong>: The <a href="https://github.com/qgis/qgis">QGIS GitHub</a> is where all the development happens,
+and you can submit issues, pull requests, and more.</li>
+</ul>
+
+<h2 id="final-thoughts">Final thoughts</h2>
+
+<p>Using Docker to set up a QGIS development environment simplifies the process, especially for newcomers
+who may struggle with the dependency management required for compiling QGIS from source. 
+With Docker, you can create a consistent, reproducible environment for QGIS development 
+that works across platforms and makes contributing to the QGIS project easier than ever.</p>
+
+<p>Stay tuned — next, I’ll be sharing how to set up your daily development workflow,
+including recompiling QGIS after making new changes while using Docker, debugging and testing locally!</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-05-27T00:00:00+00:00">May 27, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Streamlining+QGIS+Development+using+Docker%20http%3A%2F%2F0.0.0.0%3A4000%2FQGIS-Development-Using-Docker%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2FQGIS-Development-Using-Docker%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2FQGIS-Development-Using-Docker%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Drone-Imagery-Viz/" class="pagination--pager" title="Visualizing Dar es salaam City Drone Imagery
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Drone-Imagery-Viz/" rel="permalink">Visualizing Dar es salaam City Drone Imagery
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+   <div class="entry">
+      <p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/dar-drone-imagery-viz.png" alt="" /></p>
+
+
+    </div>
+
+    <a href="//Drone-Imagery-Viz/" class="read-more">Read More</a>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ODKTrace2WKT/" rel="permalink">Converting ODK location data to WKT in QGIS
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+   <div class="entry">
+      <p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/odktrace2wkt.png" alt="" /></p>
+
+
+    </div>
+
+    <a href="//ODKTrace2WKT/" class="read-more">Read More</a>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/AI-Trash-Detection/" rel="permalink">Using AI in Trash Detection
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+   <div class="entry">
+      <p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/trash-detector.png" alt="" /></p>
+
+
+    </div>
+
+    <a href="//AI-Trash-Detection/" class="read-more">Read More</a>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Trash-Map/" rel="permalink">The Making of Trash Data Visualization
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+   <div class="entry">
+      <p><img src="https://raw.githubusercontent.com/samweli/jekyll-now/master/images/trash_map.png" alt="" /></p>
+
+
+    </div>
+
+    <a href="//Trash-Map/" class="read-more">Read More</a>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="http://x.com/SamweliTwesa" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+      
+        
+          <li><a href="http://github.com/Samweli" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Samweli Mwakisambwe. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
