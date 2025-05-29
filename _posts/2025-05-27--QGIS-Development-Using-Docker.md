@@ -9,7 +9,7 @@ published: true
 ![](../assets/images/qgis_in_docker.png)
 
 In recent years, the [QGIS Development team](https://github.com/qgis/QGIS) has been building and sharing official 
-QGIS [Docker](https://www.docker.com) images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis) . This work has provided an effective and
+QGIS [Docker](https://www.docker.com) images via the [QGIS Docker Hub](https://hub.docker.com/r/qgis/qgis). This work has provided an effective and
 reusable approach to running and setting up QGIS and its components across a wide variety of use cases and environments.
 These Docker images have been useful for those looking to run unreleased versions (nightly builds and master branch changes)
 of QGIS, create robust headless testing environments, facilitate the setup and compilation of QGIS development environments and 
@@ -21,10 +21,11 @@ a guide on how to start providing QGIS contributions. I will touch on the normal
 and explain its difference compared to the suggested Docker-based approach.
 
 The whole QGIS development workflow is 
-a huge ecosystem containing various components, general practices and a number of tools **similar to many other
+a huge ecosystem containing various components, general practices and a number of tools. This is quite **similar to many other
 big open source projects**.
 I'm not going to cover all of these here,
 but I will address the high-level structure that anyone (even a beginner) can adopt and use for the development of core QGIS features.
+Lastly I will highlight few points to take into consideration when planning to contribute to the QGIS project.
 
 ## Compiling QGIS Desktop
 
@@ -328,18 +329,7 @@ xhost +local:docker
 docker compose run qgis-dev-live bash -c "./output/bin/qgis"
 ```
 
-After running the above commands, hopefully the QGIS desktop application should start! 
-
-
-
-### Notes and troubleshooting
-Be aware that the build process may take significant time depending on your system's resources. 
-If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.
-
-There is a [Jupyter notebook](https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb) 
-that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
-in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don't want to run commands in terminal.
-
+After running the above commands, hopefully the QGIS desktop application should start!
 
 
 ## More benefits
@@ -384,6 +374,15 @@ always there to improve the new changes.
 
 For the full guide on QGIS development see the developers guideline found [here](https://docs.qgis.org/3.40/en/docs/developers_guide
 ).
+
+### Notes and troubleshooting
+Be aware that the build process may take significant time depending on your system's resources. 
+If you encounter issues, check your X11 configuration and Docker permissions for potential fixes.
+
+There is a [Jupyter notebook](https://github.com/Samweli/qgis_gis_day_tz/blob/master/materials/linux/qgis_build_linux.ipynb) 
+that contains all the commands involved in compiling and running QGIS source, the notebook was part of materials used
+in the 2024 GIS Day hacking in Tanzania. Feel free to use it if you don't want to run commands in terminal.
+
 
 
 ## Reach out
