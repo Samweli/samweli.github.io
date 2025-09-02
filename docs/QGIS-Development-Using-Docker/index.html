@@ -557,9 +557,13 @@ In this step we will configure, build and install QGIS using <a href="https://cm
 <p>The commands also mark the Git directory as safe globally, in order to avoid trust warnings when using
 Git in the build.</p>
 
+<p>Make sure the <code class="language-plaintext highlighter-rouge">/src/QGIS</code> directory exists in the container if not, use the correct path and
+change the <code class="language-plaintext highlighter-rouge">cmake ..</code> to <code class="language-plaintext highlighter-rouge">cmake relative_path_to_qgis_source</code> passing the existing
+relative path of QGIS inside the docker container.</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker compose run qgis-dev-live bash <span class="nt">-c</span> <span class="s2">"</span><span class="se">\</span><span class="s2">
     echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] Starting CMake configuration...' &amp;&amp; </span><span class="se">\</span><span class="s2">
-    cmake ../QGIS -GNinja </span><span class="se">\</span><span class="s2">
+    cmake .. -GNinja </span><span class="se">\</span><span class="s2">
         -DWITH_STAGED_PLUGINS=ON </span><span class="se">\</span><span class="s2">
         -DCMAKE_INSTALL_PREFIX=/usr </span><span class="se">\</span><span class="s2">
         -DWITH_GRASS=ON </span><span class="se">\</span><span class="s2">
@@ -573,7 +577,7 @@ Git in the build.</p>
         -DWITH_BINDINGS=ON </span><span class="se">\</span><span class="s2">
         -DDISABLE_DEPRECATED=ON &amp;&amp; </span><span class="se">\</span><span class="s2">
     echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] CMake configuration completed.' &amp;&amp; </span><span class="se">\</span><span class="s2">
-    git config --global --add safe.directory /src/QGIS/QGIS &amp;&amp; </span><span class="se">\</span><span class="s2">
+    git config --global --add safe.directory /src/QGIS &amp;&amp; </span><span class="se">\</span><span class="s2">
     echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] Starting QGIS build...' &amp;&amp; </span><span class="se">\</span><span class="s2">
     VERBOSE=1 ninja -v &amp;&amp; </span><span class="se">\</span><span class="s2">
     echo '[</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2">] QGIS build completed.' &amp;&amp; </span><span class="se">\</span><span class="s2">
@@ -583,6 +587,7 @@ Git in the build.</p>
     
 
 </code></pre></div></div>
+
 <p>The passed CMake build flags and their meaning.</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">-GNinja</span><span class="pi">:</span> <span class="s">Use Ninja as the build system..</span>
@@ -693,7 +698,6 @@ that works across platforms and makes contributing to the QGIS project easier th
 
 <p>Stay tuned — next, I’ll be sharing how to set up your daily development workflow,
 including recompiling QGIS after making new changes while using Docker, debugging and testing locally!</p>
-
 
         
       </section>
